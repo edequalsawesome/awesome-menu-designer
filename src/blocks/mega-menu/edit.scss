@@ -1,0 +1,26 @@
+// Editor specific styles.
+.ollie-mega-menu__layout-panel {
+    .components-h-stack {
+        .components-base-control,
+		.components-toggle-group-control,
+		.components-base-control__field {
+            margin-bottom: 0;
+        }
+    }
+    
+    // When justification is disabled for wide/full width
+    .block-editor-hooks__flex-layout-justification-controls.is-disabled {
+        // Apply opacity to left and right options
+        &> div:first-child,
+        &> div:last-child {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.ollie-mega-menu__layout-help {
+	font-size: 12px;
+	color: rgb(117, 117, 117);
+	margin-top: 8px !important;
+}
