@@ -22,8 +22,10 @@ $menu_width             = esc_attr( $attributes['width'] ?? 'content');
 $custom_width           = intval( $attributes['customWidth'] ?? 600 );
 $top_spacing            = intval( $attributes['topSpacing'] ?? 0 );
 
-// Generate unique ID for aria-describedby
+// Generate unique ID for ARIA attributes
 $unique_id = wp_unique_id( 'mega-menu-' );
+$menu_id = $unique_id . '-dropdown';
+$button_id = $unique_id . '-button';
 
 // Don't display the dropdown link if there is no label or no menu slug.
 if ( ! $label || ! $menu_slug ) {
@@ -57,11 +59,13 @@ $toggle_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" widt
 	data-wp-on-window--resize="actions.handleResize"
 >
 	<button
+		id="<?php echo esc_attr( $button_id ); ?>"
 		class="wp-block-ollie-mega-menu__toggle wp-block-navigation-item__content"
 		data-wp-on--click="actions.toggleMenuOnClick"
 		data-wp-on--mouseenter="actions.handleMouseEnter"
 		data-wp-on--mouseleave="actions.handleMouseLeave"
 		data-wp-bind--aria-expanded="state.isMenuOpen"
+		aria-controls="<?php echo esc_attr( $menu_id ); ?>"
 		<?php if ( $title ) : ?>
 		title="<?php echo $title; ?>"
 		<?php endif; ?>
@@ -73,17 +77,15 @@ $toggle_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" widt
 	</button>
 
 	<div
+		id="<?php echo esc_attr( $menu_id ); ?>"
 		class="<?php echo $menu_classes; ?>"
 		tabindex="-1"
 		data-top-spacing="<?php echo $top_spacing; ?>"
 		data-custom-width="<?php echo $custom_width; ?>"
 		data-wp-on--mouseenter="actions.handleMenuMouseEnter"
 		data-wp-on--mouseleave="actions.handleMenuMouseLeave"
-		role="region"
-		aria-label="<?php 
-			/* translators: %s: Menu label */
-			echo esc_attr( sprintf( __( '%s menu', 'menu-designer' ), $label ) ); 
-		?>"
+		role="group"
+		aria-labelledby="<?php echo esc_attr( $button_id ); ?>"
 	>
 		<?php echo block_template_part( $menu_slug ); ?>
 		<button 
