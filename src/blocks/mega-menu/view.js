@@ -22,6 +22,7 @@ const CONFIG = {
 	// Menu dimensions
 	MENU: {
 		MIN_WIDTH: 200, // px - Minimum width for menus
+		MIN_WIDTH_BEFORE_ANCHOR: 400, // px - Minimum width before switching to anchoring
 		VIEWPORT_OFFSET: 120, // px - Space reserved for modal header
 		MOBILE_BG_OPACITY: 0.75, // Opacity for mobile background color
 		DEFAULT_BG_FALLBACK: 'rgba(255, 255, 255, 0.75)', // Fallback mobile background
@@ -361,24 +362,47 @@ const { state, actions } = store( 'ollie/mega-menu', {
 							}px`;
 						}
 					} else {
-						// For left/right justified menus, reduce width
+						// For left/right justified menus, check if they would become too small
 						let newWidth = menuWidth;
+						let wouldBeTooSmall = false;
 
+						// Calculate the new width after overflow adjustment
 						if ( currentLeft < 0 ) {
 							const overflowLeft = Math.abs( currentLeft );
-							newWidth = menuWidth - overflowLeft;
+							newWidth = Math.min( newWidth, menuWidth - overflowLeft );
 						}
-
 						if ( currentRight > windowSpace ) {
 							const overflowRight = currentRight - windowSpace;
-							newWidth = Math.min(
-								newWidth,
-								menuWidth - overflowRight
-							);
+							newWidth = Math.min( newWidth, menuWidth - overflowRight );
 						}
 
-						const finalWidth = Math.max( newWidth, minWidth );
-						menu.style.width = `${ finalWidth }px`;
+						// Check if width would be below minimum threshold
+						wouldBeTooSmall = newWidth < CONFIG.MENU.MIN_WIDTH_BEFORE_ANCHOR;
+
+						// If menu would be too small and hasn't been swapped yet, swap justification
+						if ( wouldBeTooSmall && menu.dataset.justificationSwapped !== 'true' ) {
+							// Determine new justification (opposite of current)
+							const newJustification = justification === 'left' ? 'right' : 'left';
+							
+							// Remove all justification classes and add the new one
+							menu.classList.remove( 'menu-justified-left', 'menu-justified-right', 'menu-justified-center' );
+							menu.classList.add( `menu-justified-${newJustification}` );
+							
+							// Mark as swapped and reset styles
+							menu.dataset.justificationSwapped = 'true';
+							menu.style.width = '';
+							menu.style.left = '';
+							menu.style.maxWidth = '';
+							
+							// Re-run adjustment with new justification
+							return actions.adjustMegaMenu();
+						}
+
+						// If no swap occurred, apply the calculated width reduction
+						if ( !wouldBeTooSmall ) {
+							const finalWidth = Math.max( newWidth, CONFIG.MENU.MIN_WIDTH );
+							menu.style.width = `${ finalWidth }px`;
+						}
 					}
 				}
 			}
@@ -396,6 +420,9 @@ const { state, actions } = store( 'ollie/mega-menu', {
 			if ( ! state.isDesktop && state.menuOpenedBy.hover ) {
 				actions.closeMenu( 'hover' );
 			}
+
+			// Reset justification swap flag on resize to allow re-evaluation
+			delete menu.dataset.justificationSwapped;
 
 			// Re-apply full positioning logic on resize
 			actions.adjustMegaMenu();
@@ -522,6 +549,15 @@ const { state, actions } = store( 'ollie/mega-menu', {
 					context.previousFocus?.focus();
 				}
 				context.previousFocus = null;
+				
+				// Reset justification swap flag when menu closes
+				if ( context.megaMenu ) {
+					const menu = menuUtils.getMenu( context.megaMenu );
+					if ( menu ) {
+						delete menu.dataset.justificationSwapped;
+					}
+				}
+				
 				context.megaMenu = null;
 			}
 		},
