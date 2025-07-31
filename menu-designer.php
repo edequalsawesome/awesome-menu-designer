@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Menu Designer
- * Description:       Design custom mega menus and mobile menus for WordPress
+ * Description:       Design custom dropdown menus and mobile menus for WordPress
  * Requires at least: 6.5
  * Requires PHP:      7.0
  * Version:           0.1.0
@@ -31,22 +31,22 @@ function menu_designer_block_init() {
 add_action( 'init', 'menu_designer_block_init' );
 
 /**
- * Adds a custom template part area for mega menus to the list of template part areas.
+ * Adds a custom template part area for dropdown menus to the list of template part areas.
  *
  * This function introduces a new area specifically for menu templates, allowing
- * the creation of sections within a mega menu. The new area is appended to the 
+ * the creation of sections within a dropdown menu. The new area is appended to the 
  * existing list of template part areas.
  * 
  * @see https://developer.wordpress.org/reference/hooks/default_wp_template_part_areas/
  *
  * @param array $areas Existing array of template part areas.
- * @return array Modified array of template part areas including the new mega menu area.
+ * @return array Modified array of template part areas including the new dropdown menu area.
  */
 function menu_designer_template_part_areas( array $areas ) {
 	$areas[] = array(
 		'area'        => 'menu',
 		'area_tag'    => 'div',
-		'description' => __( 'Menu templates are used to create mega menus and mobile menus.', 'menu-designer' ),
+		'description' => __( 'Menu templates are used to create dropdown menus and mobile menus.', 'menu-designer' ),
 		'icon' 		  => 'layout',
 		'label'       => __( 'Menu', 'menu-designer' ),
 	);

@@ -25,7 +25,7 @@ $top_spacing            = intval( $attributes['topSpacing'] ?? 0 );
 // Generate unique ID for aria-describedby
 $unique_id = wp_unique_id( 'mega-menu-' );
 
-// Don't display the mega menu link if there is no label or no menu slug.
+// Don't display the dropdown link if there is no label or no menu slug.
 if ( ! $label || ! $menu_slug ) {
 	return null;	
 }

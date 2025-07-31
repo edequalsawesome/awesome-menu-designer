@@ -3,9 +3,9 @@
   "apiVersion": 3,
   "name": "ollie/mega-menu",
   "version": "0.1.0",
-  "title": "Mega Menu",
+  "title": "Dropdown Menu",
   "category": "design",
-  "description": "Add a mega menu to your navigation.",
+  "description": "Add a unique drop down menu to your navigation.",
   "parent": [
     "core/navigation"
   ],

@@ -175,7 +175,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							} );
 						} }
 						help={ __(
-							'Display mega menu on mouse hover',
+							'Display dropdown on mouse hover',
 							'menu-designer'
 						) }
 					/>
@@ -191,7 +191,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							} );
 						} }
 						help={ __(
-							'Hide on mobile or link to a URL.',
+							'Hide on mobile or link to a URL',
 							'menu-designer'
 						) }
 					/>
@@ -307,7 +307,7 @@ export default function Edit( { attributes, setAttributes } ) {
 								</div>
 								<p className="ollie-mega-menu__layout-help">
 									{ __(
-										'Link to a URL instead of displaying the mega menu on mobile.',
+										'Link to a URL instead of displaying the dropdown on mobile.',
 										'menu-designer'
 									) }
 								</p>
@@ -415,7 +415,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						__nextHasNoMarginBottom
 						label={ __( 'Top spacing', 'menu-designer' ) }
 						help={ __(
-							'The amount of space between the mega menu and the navigation item.',
+							'The amount of space between the dropdown and the navigation item.',
 							'menu-designer'
 						) }
 						value={ topSpacing }
@@ -475,7 +475,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							} )
 						}
 						aria-label={ __(
-							'Mega menu link text',
+							'Dropdown link text',
 							'menu-designer'
 						) }
 						placeholder={ __( 'Add label…', 'menu-designer' ) }

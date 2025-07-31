@@ -25,8 +25,7 @@ export default function TemplateHelpText( {
 	if ( hasTemplates ) {
 		return createInterpolateElement( 
 			sprintf(
-				__( 'Select a %s template or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer' ),
-				templateArea
+				__( 'Select a menu to use as a dropdown or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer' )
 			),
 			{
 				create: (

@@ -10,8 +10,8 @@ import { useDispatch } from '@wordpress/data';
  * 
  * @param {Object} options Configuration options
  * @param {string} options.templateArea - The template area (e.g., 'menu', 'header', 'footer')
- * @param {string} options.baseSlug - Base slug for the template (e.g., 'mobile-menu', 'mega-menu')
- * @param {string} options.baseTitle - Base title for the template (e.g., 'Mobile Menu', 'Mega Menu')
+ * @param {string} options.baseSlug - Base slug for the template (e.g., 'mobile-menu', 'dropdown-menu')
+ * @param {string} options.baseTitle - Base title for the template (e.g., 'Mobile Menu', 'Dropdown Menu')
  * @param {Array} options.existingTemplates - Array of existing templates to check for duplicates
  * @param {string} options.currentTheme - Current theme slug
  * @param {Function} options.onSuccess - Callback when template is created successfully

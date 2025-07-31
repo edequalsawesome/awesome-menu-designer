@@ -239,7 +239,7 @@ const { state, actions } = store( 'ollie/mega-menu', {
 				leftSpace: ( windowSpace - originalMenuWidth ) / 2,
 			};
 		},
-		// Adjust a single mega menu
+		// Adjust a single dropdown menu
 		adjustMegaMenu() {
 			const { ref } = getElement();
 			const menu = menuUtils.getMenu( ref );

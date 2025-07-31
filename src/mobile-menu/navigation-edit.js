@@ -103,7 +103,7 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 							}
 							templateArea="menu"
 							label={ __(
-								'Mobile Menu Template',
+								'Mobile Menu',
 								'menu-designer'
 							) }
 							help={ 
@@ -111,7 +111,7 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 									__( 'Loading templates...', 'menu-designer' )
 								) : hasTemplates ? (
 									createInterpolateElement(
-										__( 'Select a template to use as the mobile menu or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer' ),
+										__( 'Select a menu to use as the mobile menu or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer' ),
 										{
 											create: (
 												<a

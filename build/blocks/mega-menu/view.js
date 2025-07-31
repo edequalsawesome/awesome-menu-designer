@@ -262,7 +262,7 @@ const {
         leftSpace: (windowSpace - originalMenuWidth) / 2
       };
     },
-    // Adjust a single mega menu
+    // Adjust a single dropdown menu
     adjustMegaMenu() {
       const {
         ref

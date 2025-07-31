@@ -460,7 +460,7 @@ function Edit({
         showOnHover: !showOnHover
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Display mega menu on mouse hover', 'menu-designer')
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Display dropdown on mouse hover', 'menu-designer')
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Disable in mobile menu', 'menu-designer'),
     checked: disableWhenCollapsed,
@@ -469,7 +469,7 @@ function Edit({
         disableWhenCollapsed: !disableWhenCollapsed
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hide on mobile or link to a URL.', 'menu-designer')
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hide on mobile or link to a URL', 'menu-designer')
   }), disableWhenCollapsed && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "components-base-control"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
@@ -531,7 +531,7 @@ function Edit({
     settings: []
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "ollie-mega-menu__layout-help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Link to a URL instead of displaying the mega menu on mobile.', 'menu-designer'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Link to a URL instead of displaying the dropdown on mobile.', 'menu-designer'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     className: "ollie-mega-menu__layout-panel",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layout', 'menu-designer'),
     initialOpen: true
@@ -596,7 +596,7 @@ function Edit({
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.RangeControl, {
     __nextHasNoMarginBottom: true,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Top spacing', 'menu-designer'),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The amount of space between the mega menu and the navigation item.', 'menu-designer'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The amount of space between the dropdown and the navigation item.', 'menu-designer'),
     value: topSpacing,
     onChange: newTopSpacing => setAttributes({
       topSpacing: newTopSpacing
@@ -644,7 +644,7 @@ function Edit({
     onChange: labelValue => setAttributes({
       label: labelValue
     }),
-    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mega menu link text', 'menu-designer'),
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dropdown link text', 'menu-designer'),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add label…', 'menu-designer'),
     allowedFormats: ['core/bold', 'core/italic', 'core/image', 'core/strikethrough']
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
@@ -785,7 +785,7 @@ function TemplateHelpText({
   isCreating = false
 }) {
   if (hasTemplates) {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createInterpolateElement)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a %s template or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer'), templateArea), {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createInterpolateElement)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a menu to use as a dropdown or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer')), {
       create: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
         href: "#",
         onClick: e => {
@@ -1119,7 +1119,7 @@ function TemplateSelector({
   value,
   onChange,
   templateArea = 'menu',
-  label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Template', 'menu-designer'),
+  label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dropdown Menu', 'menu-designer'),
   help = null,
   previewOptions = {},
   previewBackgroundColor = null
@@ -1162,8 +1162,8 @@ function TemplateSelector({
   const isValidSelection = !value || templateOptions.some(option => option.value === value);
 
   // Use the shared template creation hook
-  const baseSlug = templateArea === 'menu' ? 'mega-menu' : templateArea;
-  const baseTitle = templateArea === 'menu' ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mega Menu', 'menu-designer') : templateArea;
+  const baseSlug = templateArea === 'menu' ? 'dropdown-menu' : templateArea;
+  const baseTitle = templateArea === 'menu' ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dropdown Menu', 'menu-designer') : templateArea;
   const {
     createTemplate: createNewTemplate,
     isCreating
@@ -1253,8 +1253,8 @@ __webpack_require__.r(__webpack_exports__);
  * 
  * @param {Object} options Configuration options
  * @param {string} options.templateArea - The template area (e.g., 'menu', 'header', 'footer')
- * @param {string} options.baseSlug - Base slug for the template (e.g., 'mobile-menu', 'mega-menu')
- * @param {string} options.baseTitle - Base title for the template (e.g., 'Mobile Menu', 'Mega Menu')
+ * @param {string} options.baseSlug - Base slug for the template (e.g., 'mobile-menu', 'dropdown-menu')
+ * @param {string} options.baseTitle - Base title for the template (e.g., 'Mobile Menu', 'Dropdown Menu')
  * @param {Array} options.existingTemplates - Array of existing templates to check for duplicates
  * @param {string} options.currentTheme - Current theme slug
  * @param {Function} options.onSuccess - Callback when template is created successfully
@@ -1494,8 +1494,8 @@ const withMobileMenuControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4_
         mobileMenuSlug: value
       }),
       templateArea: "menu",
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu Template', 'menu-designer'),
-      help: isResolving ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Loading templates...', 'menu-designer') : hasTemplates ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.createInterpolateElement)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a template to use as the mobile menu or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer'), {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu', 'menu-designer'),
+      help: isResolving ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Loading templates...', 'menu-designer') : hasTemplates ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.createInterpolateElement)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a menu to use as the mobile menu or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer'), {
         create: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
           href: "#",
           onClick: e => {
@@ -1808,7 +1808,7 @@ module.exports = window["wp"]["primitives"];
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ollie/mega-menu","version":"0.1.0","title":"Mega Menu","category":"design","description":"Add a mega menu to your navigation.","parent":["core/navigation"],"example":{},"attributes":{"label":{"type":"string"},"description":{"type":"string"},"title":{"type":"string"},"menuSlug":{"type":"string"},"showOnHover":{"type":"boolean","default":false},"disableWhenCollapsed":{"type":"boolean"},"collapsedUrl":{"type":"string"},"justifyMenu":{"type":"string"},"width":{"type":"string"},"customWidth":{"type":"number","default":600},"topSpacing":{"type":"number","default":0}},"supports":{"html":false,"interactivity":true,"renaming":false,"reusable":false,"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}},"__experimentalSlashInserter":true},"textdomain":"menu-designer","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js","viewStyle":"file:./index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ollie/mega-menu","version":"0.1.0","title":"Dropdown Menu","category":"design","description":"Add a unique drop down menu to your navigation.","parent":["core/navigation"],"example":{},"attributes":{"label":{"type":"string"},"description":{"type":"string"},"title":{"type":"string"},"menuSlug":{"type":"string"},"showOnHover":{"type":"boolean","default":false},"disableWhenCollapsed":{"type":"boolean"},"collapsedUrl":{"type":"string"},"justifyMenu":{"type":"string"},"width":{"type":"string"},"customWidth":{"type":"number","default":600},"topSpacing":{"type":"number","default":0}},"supports":{"html":false,"interactivity":true,"renaming":false,"reusable":false,"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}},"__experimentalSlashInserter":true},"textdomain":"menu-designer","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js","viewStyle":"file:./index.css"}');
 
 /***/ })
 

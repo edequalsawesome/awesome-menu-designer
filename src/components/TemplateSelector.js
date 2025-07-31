@@ -37,7 +37,7 @@ export default function TemplateSelector( {
 	value,
 	onChange,
 	templateArea = 'menu',
-	label = __( 'Menu Template', 'menu-designer' ),
+	label = __( 'Dropdown Menu', 'menu-designer' ),
 	help = null,
 	previewOptions = {},
 	previewBackgroundColor = null,
@@ -78,8 +78,8 @@ export default function TemplateSelector( {
 	const isValidSelection = ! value || templateOptions.some( ( option ) => option.value === value );
 
 	// Use the shared template creation hook
-	const baseSlug = templateArea === 'menu' ? 'mega-menu' : templateArea;
-	const baseTitle = templateArea === 'menu' ? __( 'Mega Menu', 'menu-designer' ) : templateArea;
+	const baseSlug = templateArea === 'menu' ? 'dropdown-menu' : templateArea;
+	const baseTitle = templateArea === 'menu' ? __( 'Dropdown Menu', 'menu-designer' ) : templateArea;
 	
 	const { createTemplate: createNewTemplate, isCreating } = useTemplateCreation( {
 		templateArea,
@@ -92,9 +92,6 @@ export default function TemplateSelector( {
 			onChange( newTemplate.slug );
 		},
 	} );
-
-
-
 
 	/**
 	 * Get current template label
