@@ -11,19 +11,47 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: Check if version changed
+        id: version_check
+        run: |
+          # Get current version from readme.txt
+          CURRENT_VERSION=$(grep -Po 'Stable tag: \K(.*)' readme.txt)
+          echo "Current version: $CURRENT_VERSION"
+          
+          # Get previous version from readme.txt in the previous commit
+          git checkout HEAD~1 readme.txt
+          PREVIOUS_VERSION=$(grep -Po 'Stable tag: \K(.*)' readme.txt || echo "0.0.0")
+          git checkout HEAD readme.txt
+          echo "Previous version: $PREVIOUS_VERSION"
+          
+          # Compare versions
+          if [ "$CURRENT_VERSION" = "$PREVIOUS_VERSION" ]; then
+            echo "Version has not changed. Skipping release."
+            echo "VERSION_CHANGED=false" >> $GITHUB_ENV
+          else
+            echo "Version changed from $PREVIOUS_VERSION to $CURRENT_VERSION"
+            echo "VERSION_CHANGED=true" >> $GITHUB_ENV
+          fi
 
       - name: Set up Node.js
+        if: env.VERSION_CHANGED == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
       - name: Install dependencies
+        if: env.VERSION_CHANGED == 'true'
         run: npm install
 
       - name: Build plugin
+        if: env.VERSION_CHANGED == 'true'
         run: npm run build
 
       - name: Extract version and changelog
+        if: env.VERSION_CHANGED == 'true'
         id: extract_info
         run: |
           # Extract stable tag
@@ -56,6 +84,7 @@ jobs:
           echo "EOF" >> $GITHUB_ENV
 
       - name: Create ZIP archive
+        if: env.VERSION_CHANGED == 'true'
         run: |
           # Create a clean directory for the plugin
           mkdir -p menu-designer
@@ -77,6 +106,7 @@ jobs:
           zip -r menu-designer.zip menu-designer
 
       - name: Create Release
+        if: env.VERSION_CHANGED == 'true'
         id: create_release
         uses: softprops/action-gh-release@v1
         with:
