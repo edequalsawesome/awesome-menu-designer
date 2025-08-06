@@ -1,6 +1,6 @@
 === Menu Designer ===
 Contributors: mmcalister, patrickposner
-Tags: mega menu, navigation, menu, block, gutenberg, dropdown, mobile menu, responsive
+Tags: dropdown menu, navigation, menu, block, gutenberg, dropdown, mobile menu, responsive
 Requires at least: 6.0
 Tested up to: 6.7
 Stable tag: 0.1.1
@@ -18,12 +18,12 @@ Unlike traditional menu plugins that require complex configurations and custom i
 
 = Key Features =
 
-* **Block-Based Design** - Use any WordPress blocks to build your mega menus and mobile menus
+* **Block-Based Design** - Use any WordPress blocks to build your dropdown menus and mobile menus
 * **Visual Editing** - Design your menus with the Site Editor's live preview
 * **Template Parts** - Menus are saved as reusable and portable template parts
 * **Custom Mobile Menus** - Replace default mobile navigation with custom designed templates
 * **Responsive Controls** - Choose different behaviors for mobile devices
-* **Flexible Layouts** - Content, wide, full, or custom width options for mega menus
+* **Flexible Layouts** - Content, wide, full, or custom width options for dropdown menus
 * **Smart Positioning** - Automatic edge detection prevents off-screen menus
 * **Performance Focused** - Menus load only when needed
 * **Accessibility Ready** - Keyboard navigation and screen reader support
@@ -53,11 +53,11 @@ Your menus look great on every device:
 
 = Easy to Use =
 
-**For Mega Menus:**
+**For Dropdown Menus:**
 1. Add a Navigation block to your header
-2. Insert the Mega Menu block as a navigation item
+2. Insert the Menu Designer block as a navigation item
 3. Choose or create a menu template
-4. Design your mega menu in the Site Editor
+4. Design your dropdown menu in the Site Editor
 5. Publish and enjoy!
 
 **For Mobile Menus:**
@@ -79,8 +79,8 @@ Your menus look great on every device:
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. Add a Navigation block to your site (usually in the header)
 4. Click the + button to add a block to your navigation
-5. Search for "Mega Menu" and insert the block
-6. Configure your mega menu settings and create your content!
+5. Search for "Menu Designer" and insert the block
+6. Configure your dropdown menu settings and create your content!
 
 = Requirements =
 
@@ -90,9 +90,9 @@ Your menus look great on every device:
 
 == Frequently Asked Questions ==
 
-= How do I create my first mega menu? =
+= How do I create my first dropdown menu? =
 
-After installing the plugin, add a Navigation block to your site (usually in your header template). Then add the Mega Menu block inside the navigation. Click "Create New" to design your menu template in the Site Editor.
+After installing the plugin, add a Navigation block to your site (usually in your header template). Then add the Menu Designer block inside the navigation. Click "Create New" to design your menu template in the Site Editor.
 
 = How do I create a custom mobile menu? =
 
@@ -104,11 +104,11 @@ Yes! Menu Designer works with any theme that supports navigation blocks. This in
 
 = How do I make different menus for different pages? =
 
-Both mega menus and mobile menus are saved as template parts. You can create multiple template parts and use different ones on different navigation menus throughout your site.
+Both dropdown menus and mobile menus are saved as template parts. You can create multiple template parts and use different ones on different navigation menus throughout your site.
 
-= Can I disable mega menus on mobile? =
+= Can I disable dropdown menus on mobile? =
 
-Absolutely! Each mega menu has a "Disable in mobile menu" option. You can also specify a fallback URL that mobile users will navigate to instead.
+Absolutely! Each dropdown menu has a "Disable in mobile menu" option. You can also specify a fallback URL that mobile users will navigate to instead.
 
 = Is this accessible? =
 
@@ -116,14 +116,14 @@ Yes! The plugin follows WordPress accessibility standards with proper ARIA attri
 
 = Will this slow down my site? =
 
-No. Mega menus are loaded efficiently only when needed. The plugin uses modern performance techniques including lazy loading and optimized asset delivery.
+No. Dropdown menus are loaded efficiently only when needed. The plugin uses modern performance techniques including lazy loading and optimized asset delivery.
 
 == Screenshots ==
 
-1. Adding a mega menu block to your navigation - it's as easy as adding any other block!
-2. Designing your mega menu with the visual Site Editor - use columns, images, and any blocks
+1. Adding a dropdown menu block to your navigation - it's as easy as adding any other block!
+2. Designing your dropdown menu with the visual Site Editor - use columns, images, and any blocks
 3. Settings panel showing width options, mobile controls, and link attributes
-4. Live preview of a multi-column mega menu with images and styled content
+4. Live preview of a multi-column dropdown menu with images and styled content
 5. Mobile view showing the fallback behavior options
 6. Managing multiple menu templates in the Site Editor
 

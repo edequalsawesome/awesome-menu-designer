@@ -86,24 +86,20 @@ jobs:
       - name: Create ZIP archive
         if: env.VERSION_CHANGED == 'true'
         run: |
-          # Create a clean directory for the plugin
-          mkdir -p menu-designer
-          
-          # Copy plugin files, excluding development files
-          rsync -av --exclude='node_modules' \
-                    --exclude='.git' \
-                    --exclude='.github' \
-                    --exclude='Sites' \
-                    --exclude='src' \
-                    --exclude='*.log' \
-                    --exclude='.DS_Store' \
-                    --exclude='package-lock.json' \
-                    --exclude='*.sh' \
-                    --exclude='CLAUDE.md' \
-                    ./ menu-designer/
-          
-          # Create the zip file
-          zip -r menu-designer.zip menu-designer
+          # Create the zip file directly, excluding development files
+          zip -r menu-designer.zip . \
+              -x "*.git*" \
+              -x "*.github*" \
+              -x "node_modules/*" \
+              -x "src/*" \
+              -x "Sites/*" \
+              -x "*.log" \
+              -x ".DS_Store" \
+              -x "package-lock.json" \
+              -x "*.sh" \
+              -x "CLAUDE.md" \
+              -x ".editorconfig" \
+              -x ".claude/*"
 
       - name: Create Release
         if: env.VERSION_CHANGED == 'true'
