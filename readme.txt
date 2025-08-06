@@ -3,18 +3,18 @@ Contributors: mmcalister, patrickposner
 Tags: mega menu, navigation, menu, block, gutenberg, dropdown, mobile menu, responsive
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Design custom mega menus and mobile menus for WordPress navigation with the power of the block editor. Create rich dropdown menus and responsive mobile navigation with any blocks.
+Design custom dropdown menus and mobile menus for WordPress navigation with the power of the block editor. Create rich dropdown menus and responsive mobile navigation with any blocks.
 
 == Description ==
 
-**Menu Designer** brings the full power of the WordPress block editor to your navigation menus! Create stunning mega menus and custom mobile menus with rich content, images, columns, and any blocks you love – all without leaving the familiar WordPress interface.
+**Menu Designer** brings the full power of the WordPress block editor to your navigation menus! Create stunning dropdown menus and custom mobile menus with rich content, images, columns, and any blocks you love – all without leaving the familiar WordPress interface.
 
-Unlike traditional menu plugins that require complex configurations and custom interfaces, Menu Designer integrates seamlessly with WordPress's native navigation block. Simply add the mega menu block to any navigation menu or configure a custom mobile menu template, and start designing!
+Unlike traditional menu plugins that require complex configurations and custom interfaces, Menu Designer integrates seamlessly with WordPress's native navigation block. Simply add the Menu Designer block to any navigation menu or configure a custom mobile menu template, and start designing!
 
 = Key Features =
 
@@ -30,7 +30,7 @@ Unlike traditional menu plugins that require complex configurations and custom i
 
 = Design Freedom =
 
-Create mega menus and mobile menus that match your vision:
+Create dropdown menus and mobile menus that match your vision:
 
 * Multi-column layouts with the Columns block
 * Featured images and galleries
@@ -46,7 +46,7 @@ Create mega menus and mobile menus that match your vision:
 Your menus look great on every device:
 
 * Custom mobile menu designs that replace default navigation
-* Disable mega menus on mobile with fallback URLs
+* Disable dropdowns on mobile with fallback URLs
 * Custom breakpoints for responsive behavior
 * Touch-friendly interaction patterns
 * Optimized performance for mobile devices
