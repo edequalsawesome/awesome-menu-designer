@@ -1391,7 +1391,7 @@ const MobileMenuColorControls = ({
   const colorSettings = [{
     value: mobileMenuBackgroundColor?.color,
     onChange: setMobileMenuBackgroundColor,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu Background', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile menu background', 'menu-designer'),
     resetAllFilter: () => ({
       mobileMenuBackgroundColor: undefined,
       customMobileMenuBackgroundColor: undefined
@@ -1399,7 +1399,7 @@ const MobileMenuColorControls = ({
   }, {
     value: mobileIconBackgroundColor?.color,
     onChange: setMobileIconBackgroundColor,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Icon Background', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile icon background', 'menu-designer'),
     resetAllFilter: () => ({
       mobileIconBackgroundColor: undefined,
       customMobileIconBackgroundColor: undefined
@@ -1407,7 +1407,7 @@ const MobileMenuColorControls = ({
   }, {
     value: mobileIconColor?.color,
     onChange: setMobileIconColor,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Icon', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile icon', 'menu-designer'),
     resetAllFilter: () => ({
       mobileIconColor: undefined,
       customMobileIconColor: undefined
@@ -1430,7 +1430,7 @@ const MobileMenuColorControls = ({
       label,
       onColorChange: onChange,
       resetAllFilter,
-      isShownByDefault: false,
+      isShownByDefault: true,
       enableAlpha: true,
       clearable: true
     }],

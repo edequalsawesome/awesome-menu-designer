@@ -21,7 +21,7 @@ const MobileMenuColorControls = ({
 		{
 			value: mobileMenuBackgroundColor?.color,
 			onChange: setMobileMenuBackgroundColor,
-			label: __( 'Mobile Menu Background', 'menu-designer' ),
+			label: __( 'Mobile menu background', 'menu-designer' ),
 			resetAllFilter: () => ({
 				mobileMenuBackgroundColor: undefined,
 				customMobileMenuBackgroundColor: undefined,
@@ -30,7 +30,7 @@ const MobileMenuColorControls = ({
 		{
 			value: mobileIconBackgroundColor?.color,
 			onChange: setMobileIconBackgroundColor,
-			label: __( 'Mobile Icon Background', 'menu-designer' ),
+			label: __( 'Mobile icon background', 'menu-designer' ),
 			resetAllFilter: () => ({
 				mobileIconBackgroundColor: undefined,
 				customMobileIconBackgroundColor: undefined,
@@ -39,7 +39,7 @@ const MobileMenuColorControls = ({
 		{
 			value: mobileIconColor?.color,
 			onChange: setMobileIconColor,
-			label: __( 'Mobile Icon', 'menu-designer' ),
+			label: __( 'Mobile icon', 'menu-designer' ),
 			resetAllFilter: () => ({
 				mobileIconColor: undefined,
 				customMobileIconColor: undefined,
@@ -66,7 +66,7 @@ const MobileMenuColorControls = ({
 								label,
 								onColorChange: onChange,
 								resetAllFilter,
-								isShownByDefault: false,
+								isShownByDefault: true,
 								enableAlpha: true,
 								clearable: true,
 							},
