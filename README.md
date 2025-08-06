@@ -1,4 +1,4 @@
-# Menu Designer Block
+# Menu Designer
 
 ### Create beautiful, content-rich mobile menus and dropdown menus in WordPress using the power of the block editor.
 
