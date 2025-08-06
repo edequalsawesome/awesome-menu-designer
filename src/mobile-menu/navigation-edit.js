@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
+import { InspectorControls } from '@wordpress/block-editor';
 import { PanelBody } from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
@@ -16,6 +16,7 @@ import { useSelect } from '@wordpress/data';
  */
 import TemplateSelector from '../components/TemplateSelector';
 import useTemplateCreation from '../hooks/useTemplateCreation';
+import MobileMenuColorControls from './mobile-menu-color-controls';
 
 /**
  * Add mobile menu controls to the navigation block
@@ -167,32 +168,11 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				<InspectorControls>
-					<PanelColorSettings
-						title={ __( 'Mobile Menu Styles', 'menu-designer' ) }
-						colorSettings={ [
-							{
-								value: mobileMenuBackgroundColor,
-								onChange: ( color ) => {
-									setAttributes( { mobileMenuBackgroundColor: color || '' } );
-								},
-								label: __( 'Mobile Menu Background', 'menu-designer' ),
-							},
-							{
-								value: mobileIconBackgroundColor,
-								onChange: ( color ) => {
-									setAttributes( { mobileIconBackgroundColor: color || '' } );
-								},
-								label: __( 'Mobile Icon Background', 'menu-designer' ),
-							},
-							{
-								value: mobileIconColor,
-								onChange: ( color ) => {
-									setAttributes( { mobileIconColor: color || '' } );
-								},
-								label: __( 'Mobile Icon Color', 'menu-designer' ),
-							},
-						] }
+				<InspectorControls group="color">
+					<MobileMenuColorControls
+						attributes={ attributes }
+						setAttributes={ setAttributes }
+						clientId={ props.clientId }
 					/>
 				</InspectorControls>
 			</>
@@ -220,11 +200,23 @@ const addMobileMenuAttribute = ( settings, name ) => {
 				type: 'string',
 				default: '',
 			},
+			customMobileMenuBackgroundColor: {
+				type: 'string',
+				default: '',
+			},
 			mobileIconBackgroundColor: {
 				type: 'string',
 				default: '',
 			},
+			customMobileIconBackgroundColor: {
+				type: 'string',
+				default: '',
+			},
 			mobileIconColor: {
+				type: 'string',
+				default: '',
+			},
+			customMobileIconColor: {
 				type: 'string',
 				default: '',
 			},

@@ -32,11 +32,23 @@ function register_navigation_block_attributes() {
 			'type' => 'string',
 			'default' => '',
 		),
+		'customMobileMenuBackgroundColor' => array(
+			'type' => 'string',
+			'default' => '',
+		),
 		'mobileIconBackgroundColor' => array(
 			'type' => 'string',
 			'default' => '',
 		),
+		'customMobileIconBackgroundColor' => array(
+			'type' => 'string',
+			'default' => '',
+		),
 		'mobileIconColor' => array(
+			'type' => 'string',
+			'default' => '',
+		),
+		'customMobileIconColor' => array(
 			'type' => 'string',
 			'default' => '',
 		),
@@ -55,11 +67,23 @@ function register_navigation_block_attributes() {
  * @return array Sanitized mobile menu attributes.
  */
 function get_mobile_menu_attributes( $attributes ) {
+	// Helper function to get color value from preset or custom
+	$get_color_value = function( $preset_attr, $custom_attr ) use ( $attributes ) {
+		if ( ! empty( $attributes[ $preset_attr ] ) ) {
+			// If it's a preset color, convert to CSS variable
+			return 'var(--wp--preset--color--' . esc_attr( $attributes[ $preset_attr ] ) . ')';
+		} elseif ( ! empty( $attributes[ $custom_attr ] ) ) {
+			// If it's a custom color, use it directly
+			return esc_attr( $attributes[ $custom_attr ] );
+		}
+		return '';
+	};
+
 	return array(
 		'mobile_menu_slug'      => ! empty( $attributes['mobileMenuSlug'] ) ? esc_attr( $attributes['mobileMenuSlug'] ) : '',
-		'background_color'      => ! empty( $attributes['mobileMenuBackgroundColor'] ) ? esc_attr( $attributes['mobileMenuBackgroundColor'] ) : '',
-		'icon_background_color' => ! empty( $attributes['mobileIconBackgroundColor'] ) ? esc_attr( $attributes['mobileIconBackgroundColor'] ) : '',
-		'icon_color'           => ! empty( $attributes['mobileIconColor'] ) ? esc_attr( $attributes['mobileIconColor'] ) : '',
+		'background_color'      => $get_color_value( 'mobileMenuBackgroundColor', 'customMobileMenuBackgroundColor' ),
+		'icon_background_color' => $get_color_value( 'mobileIconBackgroundColor', 'customMobileIconBackgroundColor' ),
+		'icon_color'           => $get_color_value( 'mobileIconColor', 'customMobileIconColor' ),
 	);
 }
 

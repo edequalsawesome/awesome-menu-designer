@@ -1357,6 +1357,97 @@ function useTemplateCreation({
 
 /***/ }),
 
+/***/ "./src/mobile-menu/mobile-menu-color-controls.js":
+/*!*******************************************************!*\
+  !*** ./src/mobile-menu/mobile-menu-color-controls.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+
+/**
+ * WordPress dependencies
+ */
+
+
+const MobileMenuColorControls = ({
+  clientId,
+  mobileMenuBackgroundColor,
+  mobileIconBackgroundColor,
+  mobileIconColor,
+  setMobileMenuBackgroundColor,
+  setMobileIconBackgroundColor,
+  setMobileIconColor
+}) => {
+  const colorSettings = [{
+    value: mobileMenuBackgroundColor?.color,
+    onChange: setMobileMenuBackgroundColor,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu Background', 'menu-designer'),
+    resetAllFilter: () => ({
+      mobileMenuBackgroundColor: undefined,
+      customMobileMenuBackgroundColor: undefined
+    })
+  }, {
+    value: mobileIconBackgroundColor?.color,
+    onChange: setMobileIconBackgroundColor,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Icon Background', 'menu-designer'),
+    resetAllFilter: () => ({
+      mobileIconBackgroundColor: undefined,
+      customMobileIconBackgroundColor: undefined
+    })
+  }, {
+    value: mobileIconColor?.color,
+    onChange: setMobileIconColor,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Icon', 'menu-designer'),
+    resetAllFilter: () => ({
+      mobileIconColor: undefined,
+      customMobileIconColor: undefined
+    })
+  }];
+  const colorGradientSettings = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.__experimentalUseMultipleOriginColorsAndGradients)();
+  if (!colorGradientSettings.hasColorsOrGradients) {
+    return null;
+  }
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, colorSettings.map(({
+    onChange,
+    label,
+    value,
+    resetAllFilter
+  }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.__experimentalColorGradientSettingsDropdown, {
+    key: `mobile-menu-color-${label}`,
+    __experimentalIsRenderedInSidebar: true,
+    settings: [{
+      colorValue: value,
+      label,
+      onColorChange: onChange,
+      resetAllFilter,
+      isShownByDefault: false,
+      enableAlpha: true,
+      clearable: true
+    }],
+    panelId: clientId,
+    ...colorGradientSettings
+  })));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.withColors)({
+  mobileMenuBackgroundColor: 'color'
+}, {
+  mobileIconBackgroundColor: 'color'
+}, {
+  mobileIconColor: 'color'
+})(MobileMenuColorControls));
+
+/***/ }),
+
 /***/ "./src/mobile-menu/navigation-edit.js":
 /*!********************************************!*\
   !*** ./src/mobile-menu/navigation-edit.js ***!
@@ -1384,6 +1475,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _components_TemplateSelector__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/TemplateSelector */ "./src/components/TemplateSelector.js");
 /* harmony import */ var _hooks_useTemplateCreation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hooks/useTemplateCreation */ "./src/hooks/useTemplateCreation.js");
+/* harmony import */ var _mobile_menu_color_controls__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./mobile-menu-color-controls */ "./src/mobile-menu/mobile-menu-color-controls.js");
 
 /**
  * WordPress dependencies
@@ -1401,6 +1493,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -1535,33 +1628,12 @@ const withMobileMenuControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4_
         })
       }),
       previewBackgroundColor: mobileMenuBackgroundColor
-    }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu Styles', 'menu-designer'),
-      colorSettings: [{
-        value: mobileMenuBackgroundColor,
-        onChange: color => {
-          setAttributes({
-            mobileMenuBackgroundColor: color || ''
-          });
-        },
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu Background', 'menu-designer')
-      }, {
-        value: mobileIconBackgroundColor,
-        onChange: color => {
-          setAttributes({
-            mobileIconBackgroundColor: color || ''
-          });
-        },
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Icon Background', 'menu-designer')
-      }, {
-        value: mobileIconColor,
-        onChange: color => {
-          setAttributes({
-            mobileIconColor: color || ''
-          });
-        },
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Icon Color', 'menu-designer')
-      }]
+    }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
+      group: "color"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mobile_menu_color_controls__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      attributes: attributes,
+      setAttributes: setAttributes,
+      clientId: props.clientId
     })));
   };
 }, 'withMobileMenuControls');
@@ -1585,11 +1657,23 @@ const addMobileMenuAttribute = (settings, name) => {
         type: 'string',
         default: ''
       },
+      customMobileMenuBackgroundColor: {
+        type: 'string',
+        default: ''
+      },
       mobileIconBackgroundColor: {
         type: 'string',
         default: ''
       },
+      customMobileIconBackgroundColor: {
+        type: 'string',
+        default: ''
+      },
       mobileIconColor: {
+        type: 'string',
+        default: ''
+      },
+      customMobileIconColor: {
         type: 'string',
         default: ''
       }
