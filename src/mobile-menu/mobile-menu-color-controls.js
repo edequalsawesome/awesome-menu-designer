@@ -30,7 +30,7 @@ const MobileMenuColorControls = ({
 		{
 			value: mobileIconBackgroundColor?.color,
 			onChange: setMobileIconBackgroundColor,
-			label: __( 'Mobile icon background', 'menu-designer' ),
+			label: __( 'Mobile toggle background', 'menu-designer' ),
 			resetAllFilter: () => ({
 				mobileIconBackgroundColor: undefined,
 				customMobileIconBackgroundColor: undefined,
@@ -39,7 +39,7 @@ const MobileMenuColorControls = ({
 		{
 			value: mobileIconColor?.color,
 			onChange: setMobileIconColor,
-			label: __( 'Mobile icon', 'menu-designer' ),
+			label: __( 'Mobile toggle icon', 'menu-designer' ),
 			resetAllFilter: () => ({
 				mobileIconColor: undefined,
 				customMobileIconColor: undefined,
