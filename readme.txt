@@ -3,7 +3,7 @@ Contributors: mmcalister, patrickposner
 Tags: dropdown menu, navigation, menu, block, gutenberg, dropdown, mobile menu, responsive
 Requires at least: 6.0
 Tested up to: 6.7
-Stable tag: 0.1.2
+Stable tag: 0.1.3
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -128,6 +128,11 @@ No. Dropdown menus are loaded efficiently only when needed. The plugin uses mode
 6. Managing multiple menu templates in the Site Editor
 
 == Changelog ==
+
+= 0.1.3 =
+* Add menu item link when hover is in use
+* Default hover behavior to click on mobile
+* Make sure fallback url is hidden by default
 
 = 0.1.0 =
 * Initial release
