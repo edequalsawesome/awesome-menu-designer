@@ -432,9 +432,22 @@ const { state, actions } = store( 'ollie/mega-menu', {
 				actions.applyMobileBackgroundColor( menu );
 			}
 		},
-		toggleMenuOnClick() {
+		toggleMenuOnClick( event ) {
 			const context = getContext();
 			const { ref } = getElement();
+			
+			// On mobile, always toggle the menu even if it's a link with hover enabled
+			// On desktop with hover enabled and URL, allow default link behavior
+			if ( context.showOnHover && context.url && state.isDesktop ) {
+				// Let the link navigate on desktop when hover is enabled with URL
+				return;
+			}
+			
+			// Prevent default link navigation on mobile or when no URL
+			if ( event && event.preventDefault ) {
+				event.preventDefault();
+			}
+			
 			// Safari won't send focus to the clicked element, so we need to manually place it: https://bugs.webkit.org/show_bug.cgi?id=22261
 			if ( window.document.activeElement !== ref ) ref.focus();
 

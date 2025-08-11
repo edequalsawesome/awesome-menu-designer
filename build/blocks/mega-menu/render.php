@@ -52,7 +52,7 @@ $toggle_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" widt
 <li
 	<?php echo $wrapper_attributes; ?>
 	data-wp-interactive='{ "namespace": "ollie/mega-menu" }'
-	data-wp-context='{ "menuOpenedBy": { "click": false, "focus": false, "hover": false }, "showOnHover": <?php echo $show_on_hover ? 'true' : 'false'; ?>, "topSpacing": <?php echo $top_spacing; ?> }'
+	data-wp-context='{ "menuOpenedBy": { "click": false, "focus": false, "hover": false }, "showOnHover": <?php echo $show_on_hover ? 'true' : 'false'; ?>, "url": "<?php echo $url; ?>", "topSpacing": <?php echo $top_spacing; ?> }'
 	data-wp-on--focusout="actions.handleMenuFocusout"
 	data-wp-on--keydown="actions.handleMenuKeydown"
 	data-wp-watch="callbacks.initMenu"
@@ -69,12 +69,13 @@ $toggle_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" widt
 	
 	$use_link = $show_on_hover && $url;
 	$tag_name = $use_link ? 'a' : 'button';
-	$extra_attrs = $use_link ? 'href="' . $url . '"' : 'data-wp-on--click="actions.toggleMenuOnClick"';
+	$extra_attrs = $use_link ? 'href="' . $url . '"' : '';
 	?>
 	<<?php echo $tag_name; ?>
 		<?php echo $extra_attrs; ?>
 		id="<?php echo esc_attr( $button_id ); ?>"
 		class="wp-block-ollie-mega-menu__toggle wp-block-navigation-item__content"
+		data-wp-on--click="actions.toggleMenuOnClick"
 		data-wp-on--mouseenter="actions.handleMouseEnter"
 		data-wp-on--mouseleave="actions.handleMouseLeave"
 		data-wp-bind--aria-expanded="state.isMenuOpen"
