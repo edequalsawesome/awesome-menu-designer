@@ -78,7 +78,7 @@
   left: calc(-1 * var(--wp--style--global--content-size) / 2 + 50%);
 }
 
-.wp-block-ollie-mega-menu__collapsed-link {
+.wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-ollie-mega-menu__collapsed-link {
   display: none;
 }
 

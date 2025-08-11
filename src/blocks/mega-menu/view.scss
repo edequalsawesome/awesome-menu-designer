@@ -101,8 +101,11 @@
 }
 
 // If there is a collapsed link, start hidden.
-.wp-block-ollie-mega-menu__collapsed-link {
-    display: none;
+
+.wp-block-navigation__responsive-container:not(.is-menu-open) {
+	.wp-block-ollie-mega-menu__collapsed-link {
+		display: none;
+	}
 }
 
 // If a navigation modal is open, check if the mega menu should be displayed.
