@@ -27,6 +27,9 @@
       "type": "boolean",
       "default": false
     },
+    "url": {
+      "type": "string"
+    },
     "disableWhenCollapsed": {
       "type": "boolean"
     },

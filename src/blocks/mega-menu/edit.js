@@ -57,6 +57,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		label,
 		menuSlug,
 		title,
+		url,
 		description,
 		showOnHover,
 		disableWhenCollapsed,
@@ -67,8 +68,9 @@ export default function Edit( { attributes, setAttributes } ) {
 		topSpacing,
 	} = attributes;
 
-	// State for link popover
+	// State for link popovers
 	const [ isLinkPopoverOpen, setIsLinkPopoverOpen ] = useState( false );
+	const [ isHoverLinkPopoverOpen, setIsHoverLinkPopoverOpen ] = useState( false );
 
 	// Get the layout settings.
 	const layout = useSelect(
@@ -179,6 +181,115 @@ export default function Edit( { attributes, setAttributes } ) {
 							'menu-designer'
 						) }
 					/>
+					{ showOnHover && (
+						<div className="components-base-control">
+							<label className="components-base-control__label" htmlFor="mega-menu-hover-url">
+								{ __( 'Menu Item URL', 'menu-designer' ) }
+							</label>
+							<div id="mega-menu-hover-url" style={ { marginTop: '8px' } }>
+								{ url ? (
+									<div className="block-editor-url-popover__link-viewer">
+										<Button
+											variant="secondary"
+											onClick={ () =>
+												setIsHoverLinkPopoverOpen( true )
+											}
+											style={ {
+												maxWidth: '100%',
+												justifyContent:
+													'flex-start',
+												height: 'auto',
+												minHeight: '36px',
+												padding: '4px 12px',
+												textAlign: 'left',
+											} }
+										>
+											<span
+												style={ {
+													overflow: 'hidden',
+													textOverflow:
+														'ellipsis',
+													whiteSpace: 'nowrap',
+													display: 'block',
+													flex: 1,
+												} }
+											>
+												{ url }
+											</span>
+										</Button>
+									</div>
+								) : (
+									<Button
+										variant="secondary"
+										onClick={ () =>
+											setIsHoverLinkPopoverOpen( true )
+										}
+									>
+										{ __(
+											'Add link',
+											'menu-designer'
+										) }
+									</Button>
+								) }
+								{ isHoverLinkPopoverOpen && (
+									<Popover
+										position="bottom left"
+										onClose={ () =>
+											setIsHoverLinkPopoverOpen( false )
+										}
+										focusOnMount="firstElement"
+										anchor={ document.activeElement }
+										aria-label={
+											url
+												? __(
+														'Edit link URL',
+														'menu-designer'
+												  )
+												: __(
+														'Add link URL',
+														'menu-designer'
+												  )
+										}
+									>
+										<LinkControl
+											value={
+												url
+													? { url: url }
+													: null
+											}
+											onChange={ ( linkValue ) => {
+												setAttributes( {
+													url:
+														linkValue?.url ||
+														'',
+												} );
+												setIsHoverLinkPopoverOpen(
+													false
+												);
+											} }
+											onRemove={ () => {
+												setAttributes( {
+													url: '',
+												} );
+												setIsHoverLinkPopoverOpen(
+													false
+												);
+											} }
+											showInitialSuggestions={ true }
+											withCreateSuggestion={ false }
+											settings={ [] }
+										/>
+									</Popover>
+								) }
+							</div>
+							<p className="ollie-mega-menu__layout-help">
+								{ __(
+									'When hover is enabled, clicking the menu item will navigate to this URL.',
+									'menu-designer'
+								) }
+							</p>
+						</div>
+					) }
 					<ToggleControl
 						label={ __(
 							'Disable in mobile menu',
@@ -253,15 +364,7 @@ export default function Edit( { attributes, setAttributes } ) {
 												setIsLinkPopoverOpen( false )
 											}
 											focusOnMount="firstElement"
-											anchor={
-												collapsedUrl
-													? document.querySelector(
-															'.block-editor-url-popover__link-viewer button'
-													  )
-													: document.querySelector(
-															'.components-button:focus'
-													  )
-											}
+											anchor={ document.activeElement }
 											aria-label={
 												collapsedUrl
 													? __(

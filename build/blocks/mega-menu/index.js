@@ -365,6 +365,7 @@ function Edit({
     label,
     menuSlug,
     title,
+    url,
     description,
     showOnHover,
     disableWhenCollapsed,
@@ -375,8 +376,9 @@ function Edit({
     topSpacing
   } = attributes;
 
-  // State for link popover
+  // State for link popovers
   const [isLinkPopoverOpen, setIsLinkPopoverOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  const [isHoverLinkPopoverOpen, setIsHoverLinkPopoverOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
 
   // Get the layout settings.
   const layout = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select('core/editor').getEditorSettings()?.__experimentalFeatures?.layout);
@@ -461,7 +463,68 @@ function Edit({
       });
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Display dropdown on mouse hover', 'menu-designer')
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToggleControl, {
+  }), showOnHover && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "components-base-control"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    className: "components-base-control__label",
+    htmlFor: "mega-menu-hover-url"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Item URL', 'menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    id: "mega-menu-hover-url",
+    style: {
+      marginTop: '8px'
+    }
+  }, url ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "block-editor-url-popover__link-viewer"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
+    variant: "secondary",
+    onClick: () => setIsHoverLinkPopoverOpen(true),
+    style: {
+      maxWidth: '100%',
+      justifyContent: 'flex-start',
+      height: 'auto',
+      minHeight: '36px',
+      padding: '4px 12px',
+      textAlign: 'left'
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    style: {
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      display: 'block',
+      flex: 1
+    }
+  }, url))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
+    variant: "secondary",
+    onClick: () => setIsHoverLinkPopoverOpen(true)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add link', 'menu-designer')), isHoverLinkPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
+    position: "bottom left",
+    onClose: () => setIsHoverLinkPopoverOpen(false),
+    focusOnMount: "firstElement",
+    anchor: document.activeElement,
+    "aria-label": url ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit link URL', 'menu-designer') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add link URL', 'menu-designer')
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.__experimentalLinkControl, {
+    value: url ? {
+      url: url
+    } : null,
+    onChange: linkValue => {
+      setAttributes({
+        url: linkValue?.url || ''
+      });
+      setIsHoverLinkPopoverOpen(false);
+    },
+    onRemove: () => {
+      setAttributes({
+        url: ''
+      });
+      setIsHoverLinkPopoverOpen(false);
+    },
+    showInitialSuggestions: true,
+    withCreateSuggestion: false,
+    settings: []
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    className: "ollie-mega-menu__layout-help"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('When hover is enabled, clicking the menu item will navigate to this URL.', 'menu-designer'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Disable in mobile menu', 'menu-designer'),
     checked: disableWhenCollapsed,
     onChange: () => {
@@ -508,7 +571,7 @@ function Edit({
     position: "bottom left",
     onClose: () => setIsLinkPopoverOpen(false),
     focusOnMount: "firstElement",
-    anchor: collapsedUrl ? document.querySelector('.block-editor-url-popover__link-viewer button') : document.querySelector('.components-button:focus'),
+    anchor: document.activeElement,
     "aria-label": collapsedUrl ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit fallback URL', 'menu-designer') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add fallback URL', 'menu-designer')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.__experimentalLinkControl, {
     value: collapsedUrl ? {
@@ -1892,7 +1955,7 @@ module.exports = window["wp"]["primitives"];
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ollie/mega-menu","version":"0.1.0","title":"Dropdown Menu","category":"design","description":"Add a unique drop down menu to your navigation.","parent":["core/navigation"],"example":{},"attributes":{"label":{"type":"string"},"description":{"type":"string"},"title":{"type":"string"},"menuSlug":{"type":"string"},"showOnHover":{"type":"boolean","default":false},"disableWhenCollapsed":{"type":"boolean"},"collapsedUrl":{"type":"string"},"justifyMenu":{"type":"string"},"width":{"type":"string"},"customWidth":{"type":"number","default":600},"topSpacing":{"type":"number","default":0}},"supports":{"html":false,"interactivity":true,"renaming":false,"reusable":false,"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}},"__experimentalSlashInserter":true},"textdomain":"menu-designer","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js","viewStyle":"file:./index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ollie/mega-menu","version":"0.1.0","title":"Dropdown Menu","category":"design","description":"Add a unique drop down menu to your navigation.","parent":["core/navigation"],"example":{},"attributes":{"label":{"type":"string"},"description":{"type":"string"},"title":{"type":"string"},"menuSlug":{"type":"string"},"showOnHover":{"type":"boolean","default":false},"url":{"type":"string"},"disableWhenCollapsed":{"type":"boolean"},"collapsedUrl":{"type":"string"},"justifyMenu":{"type":"string"},"width":{"type":"string"},"customWidth":{"type":"number","default":600},"topSpacing":{"type":"number","default":0}},"supports":{"html":false,"interactivity":true,"renaming":false,"reusable":false,"typography":{"fontSize":true,"lineHeight":true,"__experimentalFontFamily":true,"__experimentalFontWeight":true,"__experimentalFontStyle":true,"__experimentalTextTransform":true,"__experimentalTextDecoration":true,"__experimentalLetterSpacing":true,"__experimentalDefaultControls":{"fontSize":true}},"__experimentalSlashInserter":true},"textdomain":"menu-designer","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php","viewScriptModule":"file:./view.js","viewStyle":"file:./index.css"}');
 
 /***/ })
 

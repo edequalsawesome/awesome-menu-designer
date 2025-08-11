@@ -12,6 +12,7 @@
 
 $disable_when_collapsed = $attributes['disableWhenCollapsed'] ?? false;
 $show_on_hover          = $attributes['showOnHover'] ?? false;
+$url                    = esc_url( $attributes['url'] ?? '' );
 $label                  = esc_html( $attributes['label'] ?? '' );
 $description            = esc_html( $attributes['description'] ?? '' );
 $title                  = esc_attr( $attributes['title'] ?? '' );
@@ -58,10 +59,22 @@ $toggle_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" widt
 	data-wp-watch--layout="callbacks.initMenuLayout"
 	data-wp-on-window--resize="actions.handleResize"
 >
-	<button
+	<?php 
+	// Common attributes for both button and anchor
+	$toggle_content = '<span class="wp-block-navigation-item__label">' . $label . '</span>';
+	if ( $description ) {
+		$toggle_content .= '<span id="' . esc_attr( $unique_id ) . '-desc" class="wp-block-navigation-item__description">' . $description . '</span>';
+	}
+	$toggle_content .= '<span class="wp-block-ollie-mega-menu__toggle-icon" aria-hidden="true">' . $toggle_icon . '</span>';
+	
+	$use_link = $show_on_hover && $url;
+	$tag_name = $use_link ? 'a' : 'button';
+	$extra_attrs = $use_link ? 'href="' . $url . '"' : 'data-wp-on--click="actions.toggleMenuOnClick"';
+	?>
+	<<?php echo $tag_name; ?>
+		<?php echo $extra_attrs; ?>
 		id="<?php echo esc_attr( $button_id ); ?>"
 		class="wp-block-ollie-mega-menu__toggle wp-block-navigation-item__content"
-		data-wp-on--click="actions.toggleMenuOnClick"
 		data-wp-on--mouseenter="actions.handleMouseEnter"
 		data-wp-on--mouseleave="actions.handleMouseLeave"
 		data-wp-bind--aria-expanded="state.isMenuOpen"
@@ -73,8 +86,8 @@ $toggle_icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" widt
 		aria-describedby="<?php echo esc_attr( $unique_id ); ?>-desc"
 		<?php endif; ?>
 	>
-		<span class="wp-block-navigation-item__label"><?php echo $label; ?></span><?php if ( $description ) : ?><span id="<?php echo esc_attr( $unique_id ); ?>-desc" class="wp-block-navigation-item__description"><?php echo $description; ?></span><?php endif; ?><span class="wp-block-ollie-mega-menu__toggle-icon" aria-hidden="true"><?php echo $toggle_icon; ?></span>
-	</button>
+		<?php echo $toggle_content; ?>
+	</<?php echo $tag_name; ?>>
 
 	<div
 		id="<?php echo esc_attr( $menu_id ); ?>"
