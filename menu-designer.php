@@ -18,6 +18,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Load GitHub plugin updater.
+require 'includes/plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$updater = PucFactory::buildUpdateChecker(
+	'https://github.com/OllieWP/menu-designer',
+	__FILE__,
+	'menu-designer'
+);
+
+$updater->getVcsApi()->enableReleaseAssets();
+
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
@@ -28,18 +41,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 function menu_designer_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/mega-menu' );
 }
+
 add_action( 'init', 'menu_designer_block_init' );
 
 /**
  * Adds a custom template part area for dropdown menus to the list of template part areas.
  *
  * This function introduces a new area specifically for menu templates, allowing
- * the creation of sections within a dropdown menu. The new area is appended to the 
+ * the creation of sections within a dropdown menu. The new area is appended to the
  * existing list of template part areas.
- * 
+ *
  * @see https://developer.wordpress.org/reference/hooks/default_wp_template_part_areas/
  *
  * @param array $areas Existing array of template part areas.
+ *
  * @return array Modified array of template part areas including the new dropdown menu area.
  */
 function menu_designer_template_part_areas( array $areas ) {
@@ -47,12 +62,13 @@ function menu_designer_template_part_areas( array $areas ) {
 		'area'        => 'menu',
 		'area_tag'    => 'div',
 		'description' => __( 'Menu templates are used to create dropdown menus and mobile menus.', 'menu-designer' ),
-		'icon' 		  => 'layout',
+		'icon'        => 'layout',
 		'label'       => __( 'Menu', 'menu-designer' ),
 	);
 
 	return $areas;
 }
+
 add_filter( 'default_wp_template_part_areas', 'menu_designer_template_part_areas' );
 
 // Include preview functionality
