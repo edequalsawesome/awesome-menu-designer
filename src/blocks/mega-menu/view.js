@@ -98,6 +98,9 @@ const menuUtils = {
 	},
 };
 
+// Track the currently open hover menu globally
+let currentHoverMenu = null;
+
 const { state, actions } = store( 'ollie/mega-menu', {
 	state: {
 		get isMenuOpen() {
@@ -487,6 +490,12 @@ const { state, actions } = store( 'ollie/mega-menu', {
 
 			actions.setHoverTimeout( () => {
 				if ( ! state.menuOpenedBy.click ) {
+					// Close the previously open hover menu if it exists
+					if ( currentHoverMenu && currentHoverMenu !== getContext() ) {
+						currentHoverMenu.menuOpenedBy.hover = false;
+					}
+					// Track this as the current hover menu
+					currentHoverMenu = getContext();
 					// Don't interfere with click-opened menus
 					actions.openMenu( 'hover' );
 				}
@@ -556,6 +565,11 @@ const { state, actions } = store( 'ollie/mega-menu', {
 
 			// Reset the menu reference and button focus when closed.
 			if ( ! state.isMenuOpen ) {
+				// Clear the global hover menu reference if this was the hover menu
+				if ( currentHoverMenu === context ) {
+					currentHoverMenu = null;
+				}
+				
 				if (
 					context.megaMenu?.contains( window.document.activeElement )
 				) {

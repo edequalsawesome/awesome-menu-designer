@@ -144,6 +144,9 @@ const menuUtils = {
     return justificationClasses[justification].some(className => element.classList.contains(className));
   }
 };
+
+// Track the currently open hover menu globally
+let currentHoverMenu = null;
 const {
   state,
   actions
@@ -482,6 +485,12 @@ const {
       if (!actions.shouldActivateHover()) return;
       actions.setHoverTimeout(() => {
         if (!state.menuOpenedBy.click) {
+          // Close the previously open hover menu if it exists
+          if (currentHoverMenu && currentHoverMenu !== (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)()) {
+            currentHoverMenu.menuOpenedBy.hover = false;
+          }
+          // Track this as the current hover menu
+          currentHoverMenu = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
           // Don't interfere with click-opened menus
           actions.openMenu('hover');
         }
@@ -543,6 +552,10 @@ const {
 
       // Reset the menu reference and button focus when closed.
       if (!state.isMenuOpen) {
+        // Clear the global hover menu reference if this was the hover menu
+        if (currentHoverMenu === context) {
+          currentHoverMenu = null;
+        }
         if (context.megaMenu?.contains(window.document.activeElement)) {
           context.previousFocus?.focus();
         }
