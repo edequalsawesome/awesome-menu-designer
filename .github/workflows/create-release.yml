@@ -87,7 +87,7 @@ jobs:
         if: env.VERSION_CHANGED == 'true'
         run: |
           # Create the zip file directly, excluding development files
-          zip -r menu-designer.zip . \
+          zip -r ollie-menu-designer.zip . \
               -x "*.git*" \
               -x "*.github*" \
               -x "node_modules/*" \
@@ -111,6 +111,6 @@ jobs:
           body: ${{ env.RELEASE_NOTES }}
           draft: false
           prerelease: false
-          files: menu-designer.zip
+          files: ollie-menu-designer.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
