@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Menu Designer
+ * Plugin Name:       Ollie Menu Designer
  * Description:       Design custom dropdown menus and mobile menus for WordPress
  * Requires at least: 6.5
  * Requires PHP:      7.0
@@ -8,9 +8,9 @@
  * Author:            Mike McAlister
  * License:           GPL-3.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain:       menu-designer
+ * Text Domain:       ollie-menu-designer
  *
- * @package           menu-designer
+ * @package           ollie-menu-designer
  */
 
 // Exit if accessed directly.
