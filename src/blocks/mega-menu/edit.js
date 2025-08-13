@@ -13,7 +13,6 @@ import { useSelect } from '@wordpress/data';
 import { useEffect, useState } from '@wordpress/element';
 import {
 	Button,
-	Guide,
 	PanelBody,
 	Popover,
 	RangeControl,
@@ -40,6 +39,7 @@ import {
  */
 import './edit.scss';
 import TemplateSelector from '../../components/TemplateSelector';
+import MenuDesignerGuide from '../../components/MenuDesignerGuide';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -72,8 +72,6 @@ export default function Edit( { attributes, setAttributes } ) {
 	// State for link popovers
 	const [ isLinkPopoverOpen, setIsLinkPopoverOpen ] = useState( false );
 	const [ isHoverLinkPopoverOpen, setIsHoverLinkPopoverOpen ] = useState( false );
-	// State for guide modal
-	const [ isGuideOpen, setIsGuideOpen ] = useState( false );
 
 	// Get the layout settings.
 	const layout = useSelect(
@@ -154,82 +152,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					title={ __( 'Settings', 'ollie-menu-designer' ) }
 					initialOpen={ true }
 				>
-					<Button
-						variant="secondary"
-						onClick={ () => setIsGuideOpen( true ) }
-						style={ { marginBottom: '16px', width: '100%' } }
-					>
-						{ __( 'Show Menu Designer Guide', 'ollie-menu-designer' ) }
-					</Button>
-					{ isGuideOpen && (
-						<Guide
-							contentLabel={ __( 'Menu Designer Guide', 'ollie-menu-designer' ) }
-							onFinish={ () => setIsGuideOpen( false ) }
-							className="ollie-menu-designer-guide"
-							pages={ [
-								{
-									content: (
-										<>
-											<h2>{ __( 'Welcome to Menu Designer!', 'ollie-menu-designer' ) }</h2>
-											<p>{ __( 'This guide will help you create your first mobile or dropdown menu. Watch the complete video tutorial below to get started or click "Next" to learn specific tips.', 'ollie-menu-designer' ) }</p>
-											<div className="ollie-menu-designer-guide-video">
-												<iframe 
-													src='https://www.youtube.com/embed/UXWOafpBn38'
-													frameborder='0'
-													allowfullscreen
-												/>
-											</div>
-										</>
-									),
-								},
-								{
-									content: (
-										<>
-											<h2>{ __( 'Add a dropdown menu item', 'ollie-menu-designer' ) }</h2>
-											<p>{ __( 'To add a dropdown menu item, select the Navigation block and click the "Add Block" button. Use the block inserter to add the "Dropdown Menu" block. Once added, you can create or select a dropdown menu and configure it with the available settings.', 'ollie-menu-designer' ) }</p>
-											<div className="ollie-menu-designer-guide-video">
-												<iframe 
-													src='https://www.youtube.com/embed/UXWOafpBn38?start=421'
-													frameborder='0'
-													allowfullscreen
-												/>
-											</div>
-										</>
-									),
-								},
-								{
-									content: (
-										<>
-											<h2>{ __( 'Add a mobile menu', 'ollie-menu-designer' ) }</h2>
-											<p>{ __( 'To add a mobile menu, select the Navigation block and click Settings tab in the block settings sidebar. Here, you can select or create a mobile menu. In the Styles tab, you can customize the various colors of the mobile menu.', 'ollie-menu-designer' ) }</p>
-											<div className="ollie-menu-designer-guide-video">
-												<iframe 
-													src='https://www.youtube.com/embed/UXWOafpBn38?start=150'
-													frameborder='0'
-													allowfullscreen
-												/>
-											</div>
-										</>
-									),
-								},
-								{
-									content: (
-										<>
-											<h2>{ __( 'Create your first menu', 'ollie-menu-designer' ) }</h2>
-											<p>{ __( 'You can create your first menu by clicking "create a new one" link under the menu selector as seen in the video below. You can also go to Appearance → Editor → Patterns and create a new menu there as well.', 'ollie-menu-designer' ) }</p>
-											<div className="ollie-menu-designer-guide-video">
-												<iframe 
-													src='https://www.youtube.com/embed/UXWOafpBn38?start=216'
-													frameborder='0'
-													allowfullscreen
-												/>
-											</div>
-										</>
-									),
-								}
-							] }
-						/>
-					) }
+					<MenuDesignerGuide />
 					<TextControl
 						label={ __( 'Text', 'ollie-menu-designer' ) }
 						type="text"

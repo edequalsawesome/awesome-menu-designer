@@ -78,3 +78,21 @@
 		left: 0;
 	}
 }
+
+.ollie-menu-designer-guide-buttons {
+	margin-bottom: 16px;
+	background: color-mix(in srgb, var(--wp-components-color-accent, var(--wp-admin-theme-color, #3858e9)) 4%, #0000);
+	padding: 3px 0px 3px 10px;
+	border-radius: 5px;
+
+	button.components-button:first-child {
+		padding-left: 0;
+		gap: 8px;
+		text-decoration: none;
+		justify-content: start !important;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

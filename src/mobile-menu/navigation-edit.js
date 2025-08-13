@@ -15,6 +15,7 @@ import { useSelect } from '@wordpress/data';
  * Internal dependencies
  */
 import TemplateSelector from '../components/TemplateSelector';
+import MenuDesignerGuide from '../components/MenuDesignerGuide';
 import useTemplateCreation from '../hooks/useTemplateCreation';
 import MobileMenuColorControls from './mobile-menu-color-controls';
 
@@ -97,6 +98,7 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 						title={ __( 'Mobile Menu', 'ollie-menu-designer' ) }
 						initialOpen={ true }
 					>
+						<MenuDesignerGuide />
 						<TemplateSelector
 							value={ mobileMenuSlug }
 							onChange={ ( value ) =>

@@ -32,6 +32,36 @@ const alignNone = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpres
 
 /***/ }),
 
+/***/ "./node_modules/@wordpress/icons/build-module/library/close-small.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/close-small.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__);
+
+/**
+ * WordPress dependencies
+ */
+
+const closeSmall = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24"
+}, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.Path, {
+  d: "M12 13.06l3.712 3.713 1.061-1.06L13.061 12l3.712-3.712-1.06-1.06L12 10.938 8.288 7.227l-1.061 1.06L10.939 12l-3.712 3.712 1.06 1.061L12 13.061z"
+}));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (closeSmall);
+//# sourceMappingURL=close-small.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@wordpress/icons/build-module/library/edit.js":
 /*!********************************************************************!*\
   !*** ./node_modules/@wordpress/icons/build-module/library/edit.js ***!
@@ -317,15 +347,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-left.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-center.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-right.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/align-none.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/stretch-wide.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/stretch-full-width.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/settings.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-left.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-center.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/justify-right.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/align-none.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/stretch-wide.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/stretch-full-width.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/settings.js");
 /* harmony import */ var _edit_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./edit.scss */ "./src/blocks/mega-menu/edit.scss");
 /* harmony import */ var _components_TemplateSelector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/TemplateSelector */ "./src/components/TemplateSelector.js");
+/* harmony import */ var _components_MenuDesignerGuide__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../components/MenuDesignerGuide */ "./src/components/MenuDesignerGuide.js");
 
 /**
  * WordPress dependencies
@@ -342,6 +373,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -379,8 +411,6 @@ function Edit({
   // State for link popovers
   const [isLinkPopoverOpen, setIsLinkPopoverOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
   const [isHoverLinkPopoverOpen, setIsHoverLinkPopoverOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
-  // State for guide modal
-  const [isGuideOpen, setIsGuideOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
 
   // Get the layout settings.
   const layout = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select('core/editor').getEditorSettings()?.__experimentalFeatures?.layout);
@@ -400,36 +430,36 @@ function Edit({
   });
   const justificationOptions = [{
     value: 'left',
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu left', 'ollie-menu-designer')
   }, {
     value: 'center',
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu center', 'ollie-menu-designer')
   }, {
     value: 'right',
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu right', 'ollie-menu-designer')
   }];
   const widthOptions = [{
     value: 'content',
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
     // translators: %s: container size (i.e. 600px etc)
     (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content width (%s wide)', 'ollie-menu-designer'), layout?.contentSize || '')
   }, {
     value: 'wide',
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
     // translators: %s: container size (i.e. 600px etc)
     (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Wide width (%s wide)', 'ollie-menu-designer'), layout?.wideSize || '')
   }, {
     value: 'full',
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Full width', 'ollie-menu-designer')
   }, {
     value: 'custom',
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Custom width', 'ollie-menu-designer')
   }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
@@ -438,51 +468,7 @@ function Edit({
     className: "ollie-mega-menu__settings-panel",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'ollie-menu-designer'),
     initialOpen: true
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
-    variant: "secondary",
-    onClick: () => setIsGuideOpen(true),
-    style: {
-      marginBottom: '16px',
-      width: '100%'
-    }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show Menu Designer Guide', 'ollie-menu-designer')), isGuideOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Guide, {
-    contentLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Designer Guide', 'ollie-menu-designer'),
-    onFinish: () => setIsGuideOpen(false),
-    className: "ollie-menu-designer-guide",
-    pages: [{
-      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Welcome to Menu Designer!', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('This guide will help you create your first mobile or dropdown menu. Watch the complete video tutorial below to get started or click "Next" to learn specific tips.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: "ollie-menu-designer-guide-video"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-        src: "https://www.youtube.com/embed/UXWOafpBn38",
-        frameborder: "0",
-        allowfullscreen: true
-      })))
-    }, {
-      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add a dropdown menu item', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('To add a dropdown menu item, select the Navigation block and click the "Add Block" button. Use the block inserter to add the "Dropdown Menu" block. Once added, you can create or select a dropdown menu and configure it with the available settings.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: "ollie-menu-designer-guide-video"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-        src: "https://www.youtube.com/embed/UXWOafpBn38?start=421",
-        frameborder: "0",
-        allowfullscreen: true
-      })))
-    }, {
-      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add a mobile menu', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('To add a mobile menu, select the Navigation block and click Settings tab in the block settings sidebar. Here, you can select or create a mobile menu. In the Styles tab, you can customize the various colors of the mobile menu.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: "ollie-menu-designer-guide-video"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-        src: "https://www.youtube.com/embed/UXWOafpBn38?start=150",
-        frameborder: "0",
-        allowfullscreen: true
-      })))
-    }, {
-      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create your first menu', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('You can create your first menu by clicking "create a new one" link under the menu selector as seen in the video below. You can also go to Appearance → Editor → Patterns and create a new menu there as well.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-        className: "ollie-menu-designer-guide-video"
-      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-        src: "https://www.youtube.com/embed/UXWOafpBn38?start=216",
-        frameborder: "0",
-        allowfullscreen: true
-      })))
-    }]
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_MenuDesignerGuide__WEBPACK_IMPORTED_MODULE_8__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text', 'ollie-menu-designer'),
     type: "text",
     value: label,
@@ -849,6 +835,148 @@ const addToNavigation = (blockSettings, blockName) => {
   return blockSettings;
 };
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.addFilter)('blocks.registerBlockType', 'ollie-mega-menu-add-to-navigation', addToNavigation);
+
+/***/ }),
+
+/***/ "./src/components/MenuDesignerGuide.js":
+/*!*********************************************!*\
+  !*** ./src/components/MenuDesignerGuide.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MenuDesignerGuide)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/close-small.js");
+
+/**
+ * WordPress dependencies
+ */
+
+
+
+
+
+/**
+ * Menu Designer Guide Component
+ * 
+ * Displays a guide modal with tutorial information about the Menu Designer plugin.
+ * Can be used in both mega menu and mobile menu settings.
+ * 
+ * @param {Object} props - Component props
+ * @param {string} props.buttonText - Text for the button that opens the guide
+ * @param {string} props.buttonStyle - Additional styles for the button
+ * @return {Element} Guide button and modal
+ */
+function MenuDesignerGuide({
+  buttonText = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Designer Guide', 'ollie-menu-designer'),
+  buttonStyle = {}
+}) {
+  const [isGuideOpen, setIsGuideOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+  const [isDismissed, setIsDismissed] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false);
+
+  // Check localStorage on mount to see if guide was previously dismissed
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    const dismissed = localStorage.getItem('ollieMenuDesignerGuideDismissed');
+    if (dismissed === 'true') {
+      setIsDismissed(true);
+    }
+  }, []);
+
+  // Handle dismissing the guide
+  const handleDismiss = () => {
+    setIsDismissed(true);
+    localStorage.setItem('ollieMenuDesignerGuideDismissed', 'true');
+  };
+
+  // Don't render anything if dismissed
+  if (isDismissed) {
+    return null;
+  }
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalHStack, {
+    alignment: "center",
+    className: "ollie-menu-designer-guide-buttons",
+    spacing: 2,
+    style: {
+      marginBottom: '16px',
+      ...buttonStyle
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: "link",
+    icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "32",
+      height: "32",
+      fill: "#000000",
+      viewBox: "0 0 256 256"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("path", {
+      d: "M208,40H48A24,24,0,0,0,24,64V176a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V64A24,24,0,0,0,208,40Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V64a8,8,0,0,1,8-8H208a8,8,0,0,1,8,8Zm-48,48a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,224Zm-3.56-110.66-48-32A8,8,0,0,0,104,88v64a8,8,0,0,0,12.44,6.66l48-32a8,8,0,0,0,0-13.32ZM120,137.05V103l25.58,17Z"
+    })),
+    iconSize: 20,
+    onClick: () => setIsGuideOpen(true),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('View the guide', 'ollie-menu-designer'),
+    style: {
+      flex: 1,
+      justifyContent: 'center'
+    }
+  }, buttonText), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: "link",
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    iconSize: 22,
+    onClick: handleDismiss,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dismiss guide', 'ollie-menu-designer'),
+    showTooltip: true,
+    style: {
+      minWidth: 'auto'
+    }
+  })), isGuideOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Guide, {
+    contentLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Designer Guide', 'ollie-menu-designer'),
+    onFinish: () => setIsGuideOpen(false),
+    className: "ollie-menu-designer-guide",
+    pages: [{
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Welcome to Menu Designer!', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('This guide will help you create your first mobile or dropdown menu. Watch the complete video tutorial below to get started or click "Next" to learn specific tips.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }, {
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add a mobile menu', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('To add a mobile menu, select the Navigation block and click Settings tab in the block settings sidebar. Here, you can select or create a mobile menu. In the Styles tab, you can customize the various colors of the mobile menu.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38?start=150",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }, {
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add a dropdown menu item', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('To add a dropdown menu item, select the Navigation block and click the "Add Block" button. Use the block inserter to add the "Dropdown Menu" block. Once added, you can create or select a dropdown menu and configure it with the available settings.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38?start=421",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }, {
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create your first menu', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('You can create your first menu by clicking "create a new one" link under the menu selector as seen in the video below. You can also go to Appearance → Editor → Patterns and create a new menu there as well.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38?start=216",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }]
+  }));
+}
 
 /***/ }),
 
@@ -1583,8 +1711,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _components_TemplateSelector__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/TemplateSelector */ "./src/components/TemplateSelector.js");
-/* harmony import */ var _hooks_useTemplateCreation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../hooks/useTemplateCreation */ "./src/hooks/useTemplateCreation.js");
-/* harmony import */ var _mobile_menu_color_controls__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./mobile-menu-color-controls */ "./src/mobile-menu/mobile-menu-color-controls.js");
+/* harmony import */ var _components_MenuDesignerGuide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/MenuDesignerGuide */ "./src/components/MenuDesignerGuide.js");
+/* harmony import */ var _hooks_useTemplateCreation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../hooks/useTemplateCreation */ "./src/hooks/useTemplateCreation.js");
+/* harmony import */ var _mobile_menu_color_controls__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./mobile-menu-color-controls */ "./src/mobile-menu/mobile-menu-color-controls.js");
 
 /**
  * WordPress dependencies
@@ -1602,6 +1731,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Internal dependencies
  */
+
 
 
 
@@ -1650,7 +1780,7 @@ const withMobileMenuControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4_
     const {
       createTemplate: createMobileMenuTemplate,
       isCreating
-    } = (0,_hooks_useTemplateCreation__WEBPACK_IMPORTED_MODULE_10__["default"])({
+    } = (0,_hooks_useTemplateCreation__WEBPACK_IMPORTED_MODULE_11__["default"])({
       templateArea: 'menu',
       baseSlug: 'mobile-menu',
       baseTitle: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu', 'ollie-menu-designer'),
@@ -1690,7 +1820,7 @@ const withMobileMenuControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4_
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu', 'ollie-menu-designer'),
       initialOpen: true
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TemplateSelector__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_MenuDesignerGuide__WEBPACK_IMPORTED_MODULE_10__["default"], null), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TemplateSelector__WEBPACK_IMPORTED_MODULE_9__["default"], {
       value: mobileMenuSlug,
       onChange: value => setAttributes({
         mobileMenuSlug: value
@@ -1739,7 +1869,7 @@ const withMobileMenuControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4_
       previewBackgroundColor: mobileMenuBackgroundColor
     }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       group: "color"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mobile_menu_color_controls__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_mobile_menu_color_controls__WEBPACK_IMPORTED_MODULE_12__["default"], {
       attributes: attributes,
       setAttributes: setAttributes,
       clientId: props.clientId
