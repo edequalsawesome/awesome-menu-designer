@@ -379,6 +379,8 @@ function Edit({
   // State for link popovers
   const [isLinkPopoverOpen, setIsLinkPopoverOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
   const [isHoverLinkPopoverOpen, setIsHoverLinkPopoverOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
+  // State for guide modal
+  const [isGuideOpen, setIsGuideOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
 
   // Get the layout settings.
   const layout = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.useSelect)(select => select('core/editor').getEditorSettings()?.__experimentalFeatures?.layout);
@@ -436,7 +438,51 @@ function Edit({
     className: "ollie-mega-menu__settings-panel",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'ollie-menu-designer'),
     initialOpen: true
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
+    variant: "secondary",
+    onClick: () => setIsGuideOpen(true),
+    style: {
+      marginBottom: '16px',
+      width: '100%'
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Show Menu Designer Guide', 'ollie-menu-designer')), isGuideOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Guide, {
+    contentLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Designer Guide', 'ollie-menu-designer'),
+    onFinish: () => setIsGuideOpen(false),
+    className: "ollie-menu-designer-guide",
+    pages: [{
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Welcome to Menu Designer!', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('This guide will help you create your first mobile or dropdown menu. Watch the complete video tutorial below to get started or click "Next" to learn specific tips.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }, {
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add a dropdown menu item', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('To add a dropdown menu item, select the Navigation block and click the "Add Block" button. Use the block inserter to add the "Dropdown Menu" block. Once added, you can create or select a dropdown menu and configure it with the available settings.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38?start=421",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }, {
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add a mobile menu', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('To add a mobile menu, select the Navigation block and click Settings tab in the block settings sidebar. Here, you can select or create a mobile menu. In the Styles tab, you can customize the various colors of the mobile menu.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38?start=150",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }, {
+      content: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Create your first menu', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('You can create your first menu by clicking "create a new one" link under the menu selector as seen in the video below. You can also go to Appearance → Editor → Patterns and create a new menu there as well.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+        className: "ollie-menu-designer-guide-video"
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+        src: "https://www.youtube.com/embed/UXWOafpBn38?start=216",
+        frameborder: "0",
+        allowfullscreen: true
+      })))
+    }]
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text', 'ollie-menu-designer'),
     type: "text",
     value: label,

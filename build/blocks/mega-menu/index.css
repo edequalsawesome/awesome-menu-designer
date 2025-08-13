@@ -120,4 +120,49 @@
   margin-top: 8px !important;
 }
 
+.ollie-menu-designer-guide {
+  width: 800px;
+  max-height: none !important;
+}
+.ollie-menu-designer-guide .components-modal__header .components-button:hover svg {
+  fill: currentColor;
+}
+.ollie-menu-designer-guide .components-guide__container {
+  padding: 40px;
+}
+.ollie-menu-designer-guide h2 + p {
+  margin-top: 0;
+}
+.ollie-menu-designer-guide .ollie-menu-designer-guide-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+.ollie-menu-designer-guide .ollie-menu-designer-guide-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.ollie-menu-designer-guide .components-guide__page-control {
+  order: 10;
+  display: none;
+}
+.ollie-menu-designer-guide .components-guide__footer {
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+.ollie-menu-designer-guide .components-guide__forward-button,
+.ollie-menu-designer-guide .components-guide__finish-button {
+  right: 0;
+}
+.ollie-menu-designer-guide .components-guide__back-button {
+  left: 0;
+}
+
 /*# sourceMappingURL=index.css.map*/
