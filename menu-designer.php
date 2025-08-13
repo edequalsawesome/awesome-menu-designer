@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name:       Ollie Menu Designer
- * Description:       Design custom dropdown menus and mobile menus for WordPress
+ * Description:       Design stunning mobile navigation and dropdown menus in minutes using the native WordPress block editor — no coding required.
  * Requires at least: 6.5
  * Requires PHP:      7.0
- * Version:           0.1.4
+ * Version:           0.1.5
  * Author:            Mike McAlister
  * License:           GPL-3.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
