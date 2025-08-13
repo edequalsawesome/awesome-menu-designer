@@ -19,14 +19,14 @@ function menu_designer_handle_preview() {
 
 	// Check if user can edit theme options
 	if ( ! current_user_can( 'edit_theme_options' ) ) {
-		wp_die( __( 'You do not have permission to preview menus.', 'menu-designer' ) );
+		wp_die( __( 'You do not have permission to preview menus.', 'ollie-menu-designer' ) );
 	}
 
 	// Get the template part slug
 	$menu_slug = sanitize_text_field( $_GET['menu_designer_preview'] );
 	
 	if ( empty( $menu_slug ) ) {
-		wp_die( __( 'No menu specified.', 'menu-designer' ) );
+		wp_die( __( 'No menu specified.', 'ollie-menu-designer' ) );
 	}
 
 	// Hook to print inline styles for blocks
@@ -71,7 +71,7 @@ function menu_designer_handle_preview() {
 			$template_part = get_block_template( get_stylesheet() . '//' . $menu_slug, 'wp_template_part' );
 			
 			if ( ! $template_part ) {
-				echo '<p>' . __( 'Template part not found.', 'menu-designer' ) . '</p>';
+				echo '<p>' . __( 'Template part not found.', 'ollie-menu-designer' ) . '</p>';
 			} else {
 				// Use the content property which contains the raw block content
 				$content = $template_part->content;

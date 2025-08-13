@@ -489,45 +489,45 @@ function Edit({
   const justificationOptions = [{
     value: 'left',
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_8__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu left', 'menu-designer')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu left', 'ollie-menu-designer')
   }, {
     value: 'center',
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_9__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu center', 'menu-designer')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu center', 'ollie-menu-designer')
   }, {
     value: 'right',
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu right', 'menu-designer')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justify menu right', 'ollie-menu-designer')
   }];
   const widthOptions = [{
     value: 'content',
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
     // translators: %s: container size (i.e. 600px etc)
-    (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content width (%s wide)', 'menu-designer'), layout?.contentSize || '')
+    (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content width (%s wide)', 'ollie-menu-designer'), layout?.contentSize || '')
   }, {
     value: 'wide',
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
     // translators: %s: container size (i.e. 600px etc)
-    (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Wide width (%s wide)', 'menu-designer'), layout?.wideSize || '')
+    (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Wide width (%s wide)', 'ollie-menu-designer'), layout?.wideSize || '')
   }, {
     value: 'full',
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Full width', 'menu-designer')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Full width', 'ollie-menu-designer')
   }, {
     value: 'custom',
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Custom width', 'menu-designer')
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Custom width', 'ollie-menu-designer')
   }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     group: "settings"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     className: "ollie-mega-menu__settings-panel",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'menu-designer'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'ollie-menu-designer'),
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Text', 'ollie-menu-designer'),
     type: "text",
     value: label,
     onChange: value => setAttributes({
@@ -545,29 +545,29 @@ function Edit({
       customWidth
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Open on hover', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Open on hover', 'ollie-menu-designer'),
     checked: showOnHover,
     onChange: () => {
       setAttributes({
         showOnHover: !showOnHover
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Display mega menu on mouse hover', 'menu-designer')
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Display mega menu on mouse hover', 'ollie-menu-designer')
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Disable in mobile menu', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Disable in mobile menu', 'ollie-menu-designer'),
     checked: disableWhenCollapsed,
     onChange: () => {
       setAttributes({
         disableWhenCollapsed: !disableWhenCollapsed
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hide on mobile or link to a URL.', 'menu-designer')
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hide on mobile or link to a URL.', 'ollie-menu-designer')
   }), disableWhenCollapsed && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "components-base-control"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     className: "components-base-control__label",
     htmlFor: "mega-menu-fallback-url"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Fallback URL', 'menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Fallback URL', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     id: "mega-menu-fallback-url",
     style: {
       marginTop: '8px'
@@ -596,12 +596,12 @@ function Edit({
   }, collapsedUrl))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
     variant: "secondary",
     onClick: () => setIsLinkPopoverOpen(true)
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add mobile link', 'menu-designer')), isLinkPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add mobile link', 'ollie-menu-designer')), isLinkPopoverOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
     position: "bottom left",
     onClose: () => setIsLinkPopoverOpen(false),
     focusOnMount: "firstElement",
     anchor: collapsedUrl ? document.querySelector('.block-editor-url-popover__link-viewer button') : document.querySelector('.components-button:focus'),
-    "aria-label": collapsedUrl ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit fallback URL', 'menu-designer') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add fallback URL', 'menu-designer')
+    "aria-label": collapsedUrl ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit fallback URL', 'ollie-menu-designer') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add fallback URL', 'ollie-menu-designer')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.__experimentalLinkControl, {
     value: collapsedUrl ? {
       url: collapsedUrl
@@ -623,16 +623,16 @@ function Edit({
     settings: []
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "ollie-mega-menu__layout-help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Link to a URL instead of displaying the mega menu on mobile.', 'menu-designer'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Link to a URL instead of displaying the mega menu on mobile.', 'ollie-menu-designer'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     className: "ollie-mega-menu__layout-panel",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layout', 'menu-designer'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layout', 'ollie-menu-designer'),
     initialOpen: true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalHStack, {
     alignment: "top",
     justify: "space-between"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalToggleGroupControl, {
     className: "block-editor-hooks__flex-layout-justification-controls",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Width', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Width', 'ollie-menu-designer'),
     value: width || 'content',
     onChange: widthValue => {
       setAttributes({
@@ -649,7 +649,7 @@ function Edit({
     });
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalToggleGroupControl, {
     className: `block-editor-hooks__flex-layout-justification-controls ${width === 'wide' || width === 'full' ? 'is-disabled' : ''}`,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justification', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Justification', 'ollie-menu-designer'),
     value: justifyMenu,
     onChange: justificationValue => {
       setAttributes({
@@ -666,14 +666,14 @@ function Edit({
     });
   }))), (width === 'wide' || width === 'full') && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     className: "ollie-mega-menu__layout-help"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('When using wide or full width, the menu will be auto centered on the page.', 'menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalSpacer, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('When using wide or full width, the menu will be auto centered on the page.', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalSpacer, {
     marginBottom: 6
   })), width === 'custom' && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalSpacer, {
     marginTop: 6
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.RangeControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Custom width', 'menu-designer'),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set a custom width in pixels.', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Custom width', 'ollie-menu-designer'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set a custom width in pixels.', 'ollie-menu-designer'),
     value: customWidth,
     onChange: newCustomWidth => setAttributes({
       customWidth: newCustomWidth
@@ -687,8 +687,8 @@ function Edit({
     marginTop: 6
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.RangeControl, {
     __nextHasNoMarginBottom: true,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Top spacing', 'menu-designer'),
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The amount of space between the mega menu and the navigation item.', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Top spacing', 'ollie-menu-designer'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The amount of space between the mega menu and the navigation item.', 'ollie-menu-designer'),
     value: topSpacing,
     onChange: newTopSpacing => setAttributes({
       topSpacing: newTopSpacing
@@ -700,11 +700,11 @@ function Edit({
     __next40pxDefaultSize: true
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.PanelBody, {
     className: "ollie-mega-menu__link-attributes-panel",
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Link Attributes', 'menu-designer'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Link Attributes', 'ollie-menu-designer'),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextareaControl, {
     className: "settings-panel__description",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Description', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Description', 'ollie-menu-designer'),
     type: "text",
     value: description || '',
     onChange: descriptionValue => {
@@ -712,10 +712,10 @@ function Edit({
         description: descriptionValue
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The description will be displayed in the menu if the current theme supports it.', 'menu-designer'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The description will be displayed in the menu if the current theme supports it.', 'ollie-menu-designer'),
     autoComplete: "off"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Attribute', 'menu-designer'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Title Attribute', 'ollie-menu-designer'),
     type: "text",
     value: title || '',
     onChange: titleValue => {
@@ -723,7 +723,7 @@ function Edit({
         title: titleValue
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Additional information to help clarify the purpose of the link.', 'menu-designer'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Additional information to help clarify the purpose of the link.', 'ollie-menu-designer'),
     autoComplete: "off"
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
@@ -736,8 +736,8 @@ function Edit({
     onChange: labelValue => setAttributes({
       label: labelValue
     }),
-    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mega menu link text', 'menu-designer'),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add label…', 'menu-designer'),
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mega menu link text', 'ollie-menu-designer'),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add label…', 'ollie-menu-designer'),
     allowedFormats: ['core/bold', 'core/italic', 'core/image', 'core/strikethrough']
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "wp-block-ollie-mega-menu__toggle-icon"
@@ -819,7 +819,7 @@ const withMobileMenuControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4_
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       group: "settings"
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu', 'menu-designer'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu', 'ollie-menu-designer'),
       initialOpen: false
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_shared_TemplateSelector__WEBPACK_IMPORTED_MODULE_6__["default"], {
       value: mobileMenuSlug,
@@ -827,8 +827,8 @@ const withMobileMenuControls = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_4_
         mobileMenuSlug: value
       }),
       templateArea: "menu",
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu Template', 'menu-designer'),
-      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a template to use as the mobile menu.', 'menu-designer')
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Mobile Menu Template', 'ollie-menu-designer'),
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select a template to use as the mobile menu.', 'ollie-menu-designer')
     }))));
   };
 }, 'withMobileMenuControls');
@@ -911,7 +911,7 @@ function TemplateSelector({
   value,
   onChange,
   templateArea = 'menu',
-  label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Template', 'menu-designer'),
+  label = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Menu Template', 'ollie-menu-designer'),
   help = null,
   previewOptions = {}
 }) {
@@ -1014,9 +1014,9 @@ function TemplateSelector({
   }, [isPreviewOpen, value]);
   const defaultHelp = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.createInterpolateElement)(hasTemplates ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
   // translators: %s: template area name
-  (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Manage %s templates in the <a>Site Editor</a>.', 'menu-designer'), templateArea) : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
+  (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Manage %s templates in the <a>Site Editor</a>.', 'ollie-menu-designer'), templateArea) : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(
   // translators: %s: template area name
-  (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No %s templates found. Create one now in the <a>Site Editor</a>.', 'menu-designer'), templateArea), {
+  (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('No %s templates found. Create one now in the <a>Site Editor</a>.', 'ollie-menu-designer'), templateArea), {
     a: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
       // eslint-disable-line
       href: menuTemplateUrl,
@@ -1056,22 +1056,22 @@ function TemplateSelector({
     isSecondary: true,
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     onClick: () => setIsPreviewOpen(true)
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Preview', 'menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Preview', 'ollie-menu-designer')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
     isTertiary: true,
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     href: `${secureSiteUrl}/wp-admin/site-editor.php?p=%2Fwp_template_part%2F${currentTheme || ''}%2F%2F${value}&canvas=edit`,
     target: "_blank"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit Template', 'menu-designer'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalSpacer, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Edit Template', 'ollie-menu-designer'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.__experimentalSpacer, {
     marginTop: 6
   })), isPreviewOpen && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Modal, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Template Preview: %s', 'menu-designer'), templateOptions.find(option => option.value === value)?.label || value),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Template Preview: %s', 'ollie-menu-designer'), templateOptions.find(option => option.value === value)?.label || value),
     onRequestClose: () => {
       setIsPreviewOpen(false);
       setIframeHeight('600px'); // Reset height when closing
       setIsIframeLoading(true); // Reset loading state
     },
     className: "mega-menu-block-preview-modal",
-    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Preview template', 'menu-designer'),
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Preview template', 'ollie-menu-designer'),
     style: {
       maxWidth: '90%',
       width: modalWidth
@@ -1098,7 +1098,7 @@ function TemplateSelector({
     style: {
       marginTop: '10px'
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Loading preview…', 'menu-designer'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Loading preview…', 'ollie-menu-designer'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
     key: value // Force iframe to reload when value changes
     ,
     src: `${secureSiteUrl}/?ollie_mega_menu_preview=${value}`,
@@ -1109,7 +1109,7 @@ function TemplateSelector({
       opacity: isIframeLoading ? 0 : 1,
       transition: 'opacity 0.3s ease'
     },
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Template Preview', 'menu-designer'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Template Preview', 'ollie-menu-designer'),
     onLoad: handleIframeLoad
   }))));
 }

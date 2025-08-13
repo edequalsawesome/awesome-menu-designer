@@ -54,7 +54,7 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 		const { createTemplate: createMobileMenuTemplate, isCreating } = useTemplateCreation( {
 			templateArea: 'menu',
 			baseSlug: 'mobile-menu',
-			baseTitle: __( 'Mobile Menu', 'menu-designer' ),
+			baseTitle: __( 'Mobile Menu', 'ollie-menu-designer' ),
 			existingTemplates: templates,
 			currentTheme: themeSlug,
 			onSuccess: ( newTemplate ) => {
@@ -94,7 +94,7 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 				<BlockEdit { ...props } />
 				<InspectorControls group="settings">
 					<PanelBody
-						title={ __( 'Mobile Menu', 'menu-designer' ) }
+						title={ __( 'Mobile Menu', 'ollie-menu-designer' ) }
 						initialOpen={ true }
 					>
 						<TemplateSelector
@@ -109,10 +109,10 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 							) }
 							help={ 
 								isResolving ? (
-									__( 'Loading templates...', 'menu-designer' )
+									__( 'Loading templates...', 'ollie-menu-designer' )
 								) : hasTemplates ? (
 									createInterpolateElement(
-										__( 'Select a menu to use as the mobile menu or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'menu-designer' ),
+										__( 'Select a menu to use as the mobile menu or <create>create a new one</create> in the <editor>Site Editor</editor>.', 'ollie-menu-designer' ),
 										{
 											create: (
 												<a
@@ -142,7 +142,7 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 									)
 								) : (
 									createInterpolateElement(
-										__( 'No menus found. <a>Create your first menu</a>.', 'menu-designer' ),
+										__( 'No menus found. <a>Create your first menu</a>.', 'ollie-menu-designer' ),
 										{
 											a: (
 												<a

@@ -98,17 +98,17 @@ export default function Edit( { attributes, setAttributes } ) {
 		{
 			value: 'left',
 			icon: justifyLeft,
-			label: __( 'Justify menu left', 'menu-designer' ),
+			label: __( 'Justify menu left', 'ollie-menu-designer' ),
 		},
 		{
 			value: 'center',
 			icon: justifyCenter,
-			label: __( 'Justify menu center', 'menu-designer' ),
+			label: __( 'Justify menu center', 'ollie-menu-designer' ),
 		},
 		{
 			value: 'right',
 			icon: justifyRight,
-			label: __( 'Justify menu right', 'menu-designer' ),
+			label: __( 'Justify menu right', 'ollie-menu-designer' ),
 		},
 	];
 
@@ -118,7 +118,7 @@ export default function Edit( { attributes, setAttributes } ) {
 			icon: alignNone,
 			label: sprintf(
 				// translators: %s: container size (i.e. 600px etc)
-				__( 'Content width (%s wide)', 'menu-designer' ),
+				__( 'Content width (%s wide)', 'ollie-menu-designer' ),
 				layout?.contentSize || ''
 			),
 		},
@@ -127,19 +127,19 @@ export default function Edit( { attributes, setAttributes } ) {
 			icon: stretchWide,
 			label: sprintf(
 				// translators: %s: container size (i.e. 600px etc)
-				__( 'Wide width (%s wide)', 'menu-designer' ),
+				__( 'Wide width (%s wide)', 'ollie-menu-designer' ),
 				layout?.wideSize || ''
 			),
 		},
 		{
 			value: 'full',
 			icon: stretchFullWidth,
-			label: __( 'Full width', 'menu-designer' ),
+			label: __( 'Full width', 'ollie-menu-designer' ),
 		},
 		{
 			value: 'custom',
 			icon: settings,
-			label: __( 'Custom width', 'menu-designer' ),
+			label: __( 'Custom width', 'ollie-menu-designer' ),
 		},
 	];
 
@@ -148,11 +148,11 @@ export default function Edit( { attributes, setAttributes } ) {
 			<InspectorControls group="settings">
 				<PanelBody
 					className="ollie-mega-menu__settings-panel"
-					title={ __( 'Settings', 'menu-designer' ) }
+					title={ __( 'Settings', 'ollie-menu-designer' ) }
 					initialOpen={ true }
 				>
 					<TextControl
-						label={ __( 'Text', 'menu-designer' ) }
+						label={ __( 'Text', 'ollie-menu-designer' ) }
 						type="text"
 						value={ label }
 						onChange={ ( value ) =>
@@ -169,7 +169,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						previewOptions={ { width, customWidth } }
 					/>
 					<ToggleControl
-						label={ __( 'Open on hover', 'menu-designer' ) }
+						label={ __( 'Open on hover', 'ollie-menu-designer' ) }
 						checked={ showOnHover }
 						onChange={ () => {
 							setAttributes( {
@@ -184,7 +184,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					{ showOnHover && (
 						<div className="components-base-control">
 							<label className="components-base-control__label" htmlFor="mega-menu-hover-url">
-								{ __( 'Menu Item URL', 'menu-designer' ) }
+								{ __( 'Menu Item URL', 'ollie-menu-designer' ) }
 							</label>
 							<div id="mega-menu-hover-url" style={ { marginTop: '8px' } }>
 								{ url ? (
@@ -310,7 +310,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						<>
 							<div className="components-base-control">
 								<label className="components-base-control__label" htmlFor="mega-menu-fallback-url">
-									{ __( 'Fallback URL', 'menu-designer' ) }
+									{ __( 'Fallback URL', 'ollie-menu-designer' ) }
 								</label>
 								<div id="mega-menu-fallback-url" style={ { marginTop: '8px' } }>
 									{ collapsedUrl ? (
@@ -420,13 +420,13 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 				<PanelBody
 					className="ollie-mega-menu__layout-panel"
-					title={ __( 'Layout', 'menu-designer' ) }
+					title={ __( 'Layout', 'ollie-menu-designer' ) }
 					initialOpen={ true }
 				>
 					<HStack alignment="top" justify="space-between">
 						<ToggleGroupControl
 							className="block-editor-hooks__flex-layout-justification-controls"
-							label={ __( 'Width', 'menu-designer' ) }
+							label={ __( 'Width', 'ollie-menu-designer' ) }
 							value={ width || 'content' }
 							onChange={ ( widthValue ) => {
 								setAttributes( {
@@ -452,7 +452,7 @@ export default function Edit( { attributes, setAttributes } ) {
 									? 'is-disabled'
 									: ''
 							}` }
-							label={ __( 'Justification', 'menu-designer' ) }
+							label={ __( 'Justification', 'ollie-menu-designer' ) }
 							value={ justifyMenu }
 							onChange={ ( justificationValue ) => {
 								setAttributes( {
@@ -516,7 +516,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					<Spacer marginTop={ 6 } />
 					<RangeControl
 						__nextHasNoMarginBottom
-						label={ __( 'Top spacing', 'menu-designer' ) }
+						label={ __( 'Top spacing', 'ollie-menu-designer' ) }
 						help={ __(
 							'The amount of space between the dropdown and the navigation item.',
 							'menu-designer'
@@ -534,12 +534,12 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 				<PanelBody
 					className="ollie-mega-menu__link-attributes-panel"
-					title={ __( 'Link Attributes', 'menu-designer' ) }
+					title={ __( 'Link Attributes', 'ollie-menu-designer' ) }
 					initialOpen={ false }
 				>
 					<TextareaControl
 						className="settings-panel__description"
-						label={ __( 'Description', 'menu-designer' ) }
+						label={ __( 'Description', 'ollie-menu-designer' ) }
 						type="text"
 						value={ description || '' }
 						onChange={ ( descriptionValue ) => {
@@ -552,7 +552,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						autoComplete="off"
 					/>
 					<TextControl
-						label={ __( 'Title Attribute', 'menu-designer' ) }
+						label={ __( 'Title Attribute', 'ollie-menu-designer' ) }
 						type="text"
 						value={ title || '' }
 						onChange={ ( titleValue ) => {
@@ -581,7 +581,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							'Dropdown link text',
 							'menu-designer'
 						) }
-						placeholder={ __( 'Add label…', 'menu-designer' ) }
+						placeholder={ __( 'Add label…', 'ollie-menu-designer' ) }
 						allowedFormats={ [
 							'core/bold',
 							'core/italic',
