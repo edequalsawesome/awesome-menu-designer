@@ -2,6 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
+import { decodeEntities } from '@wordpress/html-entities';
 import { useEntityRecords } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
 import { useState } from '@wordpress/element';
@@ -69,7 +70,7 @@ export default function TemplateSelector( {
 		? records
 			.filter( ( item ) => item.area === templateArea )
 			.map( ( item ) => ( {
-				label: item.title.rendered,
+				label: decodeEntities( item.title.rendered ),
 				value: item.slug,
 			} ) )
 		: [];
