@@ -286,6 +286,14 @@ function enqueue_mobile_menu_assets() {
 			display: none !important;
 		}
 		
+		/* Position hamburger button to match close button positioning */
+		.wp-block-navigation__responsive-container-open {
+			position: absolute !important;
+			right: 12px !important;
+			top: 12px !important;
+			z-index: 100 !important;
+		}
+		
 		/* Icon size styles */
 		.mobile-icon-large .wp-block-navigation__responsive-container-close svg, 
 		.mobile-icon-large .wp-block-navigation__responsive-container-open svg {

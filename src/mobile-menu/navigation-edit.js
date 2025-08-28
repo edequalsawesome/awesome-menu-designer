@@ -87,6 +87,16 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 			}
 			// Small uses default size, no additional styles needed
 
+			// Position hamburger button to match close button positioning
+			const positioningStyles = `
+				.wp-block-navigation__responsive-container-open {
+					position: absolute !important;
+					right: 12px !important;
+					top: 12px !important;
+					z-index: 100 !important;
+				}
+			`;
+
 			// Build complete styles
 			const colorStyles = `
 				${ mobileIconBackgroundColor ? `.wp-block-navigation__overlay-menu-preview svg { background-color: ${mobileIconBackgroundColor} !important; }` : '' }
@@ -95,6 +105,7 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 
 			return `
 				${iconSizeStyles}
+				${positioningStyles}
 				${colorStyles}
 			`;
 		};
