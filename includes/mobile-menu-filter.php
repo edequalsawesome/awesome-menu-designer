@@ -52,6 +52,10 @@ function register_navigation_block_attributes() {
 			'type' => 'string',
 			'default' => '',
 		),
+		'mobileIconSize' => array(
+			'type' => 'string',
+			'default' => 'medium',
+		),
 	);
 
 	// Merge with existing attributes
@@ -84,6 +88,7 @@ function get_mobile_menu_attributes( $attributes ) {
 		'background_color'      => $get_color_value( 'mobileMenuBackgroundColor', 'customMobileMenuBackgroundColor' ),
 		'icon_background_color' => $get_color_value( 'mobileIconBackgroundColor', 'customMobileIconBackgroundColor' ),
 		'icon_color'           => $get_color_value( 'mobileIconColor', 'customMobileIconColor' ),
+		'icon_size'            => ! empty( $attributes['mobileIconSize'] ) ? esc_attr( $attributes['mobileIconSize'] ) : 'medium',
 	);
 }
 
@@ -107,6 +112,11 @@ function add_nav_attributes( $processor, $menu_attrs, $has_mobile_menu ) {
 		if ( $menu_attrs['background_color'] ) {
 			$processor->set_attribute( 'data-mobile-menu-bg', $menu_attrs['background_color'] );
 		}
+	}
+	
+	// Add icon size class regardless of mobile menu
+	if ( $menu_attrs['icon_size'] ) {
+		$processor->add_class( 'mobile-icon-' . $menu_attrs['icon_size'] );
 	}
 }
 
@@ -230,9 +240,10 @@ function add_mobile_menu_to_navigation( $block_content, $block ) {
 	$menu_attrs = get_mobile_menu_attributes( $attributes );
 	$has_mobile_menu = ! empty( $menu_attrs['mobile_menu_slug'] );
 	$has_colors = $menu_attrs['icon_background_color'] || $menu_attrs['icon_color'] || ( $menu_attrs['background_color'] && $has_mobile_menu );
+	$has_icon_size = ! empty( $menu_attrs['icon_size'] );
 	
 	// Early return if nothing to do
-	if ( ! $has_mobile_menu && ! $has_colors ) {
+	if ( ! $has_mobile_menu && ! $has_colors && ! $has_icon_size ) {
 		return $block_content;
 	}
 
@@ -274,6 +285,21 @@ function enqueue_mobile_menu_assets() {
 		.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__mobile-menu-content ~ * {
 			display: none !important;
 		}
+		
+		/* Icon size styles */
+		.mobile-icon-large .wp-block-navigation__responsive-container-close svg, 
+		.mobile-icon-large .wp-block-navigation__responsive-container-open svg {
+			width: 40px;
+			height: 40px;
+		}
+		
+		.mobile-icon-medium .wp-block-navigation__responsive-container-close svg,
+		.mobile-icon-medium .wp-block-navigation__responsive-container-open svg {
+			width: 32px;
+			height: 32px;
+		}
+		
+		/* Small uses default size, no additional styles needed */
 	';
 
 	wp_add_inline_style( 'wp-block-navigation', $inline_css );

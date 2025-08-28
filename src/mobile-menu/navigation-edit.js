@@ -2,11 +2,10 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody } from '@wordpress/components';
+import { InspectorControls, useStyleOverride } from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { addFilter } from '@wordpress/hooks';
-import { useEffect } from '@wordpress/element';
 import { createInterpolateElement } from '@wordpress/element';
 import { useEntityRecords } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
@@ -35,7 +34,8 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 			mobileMenuSlug, 
 			mobileMenuBackgroundColor,
 			mobileIconBackgroundColor,
-			mobileIconColor
+			mobileIconColor,
+			mobileIconSize
 		} = attributes;
 
 		// Check if menu templates are available
@@ -65,30 +65,45 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 		} );
 
 
-		// Inject styles for mobile icon preview
-		useEffect( () => {
-			if ( ! mobileIconBackgroundColor && ! mobileIconColor ) return;
-
-			const styleId = 'menu-designer-mobile-icon-styles';
-			let styleElement = document.getElementById( styleId );
-			
-			if ( ! styleElement ) {
-				styleElement = document.createElement( 'style' );
-				styleElement.id = styleId;
-				document.head.appendChild( styleElement );
+		// Use WordPress's useStyleOverride for proper editor style injection
+		const generateIconSizeStyles = () => {
+			let iconSizeStyles = '';
+			if ( mobileIconSize === 'large' ) {
+				iconSizeStyles = `
+					.mobile-icon-large .wp-block-navigation__responsive-container-close svg, 
+					.mobile-icon-large .wp-block-navigation__responsive-container-open svg {
+						width: 40px !important;
+						height: 40px !important;
+					}
+				`;
+			} else if ( mobileIconSize === 'medium' ) {
+				iconSizeStyles = `
+					.mobile-icon-medium .wp-block-navigation__responsive-container-close svg,
+					.mobile-icon-medium .wp-block-navigation__responsive-container-open svg {
+						width: 32px !important;
+						height: 32px !important;
+					}
+				`;
 			}
+			// Small uses default size, no additional styles needed
 
-			const styles = `
+			// Build complete styles
+			const colorStyles = `
 				${ mobileIconBackgroundColor ? `.wp-block-navigation__overlay-menu-preview svg { background-color: ${mobileIconBackgroundColor} !important; }` : '' }
 				${ mobileIconColor ? `.wp-block-navigation__overlay-menu-preview svg { fill: ${mobileIconColor} !important; }` : '' }
 			`;
 
-			styleElement.textContent = styles;
+			return `
+				${iconSizeStyles}
+				${colorStyles}
+			`;
+		};
 
-			return () => {
-				// Don't remove on cleanup as other blocks might use it
-			};
-		}, [ mobileIconBackgroundColor, mobileIconColor ] );
+		// Apply styles using WordPress's proper method
+		useStyleOverride( {
+			id: 'menu-designer-mobile-icon-styles',
+			css: generateIconSizeStyles(),
+		} );
 
 		return (
 			<>
@@ -168,6 +183,19 @@ const withMobileMenuControls = createHigherOrderComponent( ( BlockEdit ) => {
 							}
 							previewBackgroundColor={ mobileMenuBackgroundColor }
 						/>
+						<SelectControl
+							label={ __( 'Icon Size', 'ollie-menu-designer' ) }
+							value={ mobileIconSize || 'medium' }
+							onChange={ ( value ) =>
+								setAttributes( { mobileIconSize: value } )
+							}
+							options={ [
+								{ label: __( 'Small', 'ollie-menu-designer' ), value: 'small' },
+								{ label: __( 'Medium', 'ollie-menu-designer' ), value: 'medium' },
+								{ label: __( 'Large', 'ollie-menu-designer' ), value: 'large' },
+							] }
+							help={ __( 'Choose the size of the mobile menu toggle icons.', 'ollie-menu-designer' ) }
+						/>
 					</PanelBody>
 				</InspectorControls>
 				<InspectorControls group="color">
@@ -222,9 +250,35 @@ const addMobileMenuAttribute = ( settings, name ) => {
 				type: 'string',
 				default: '',
 			},
+			mobileIconSize: {
+				type: 'string',
+				default: 'medium',
+			},
 		},
 	};
 };
+
+/**
+ * Add custom class to navigation block in the editor based on icon size
+ */
+const withMobileIconSizeClass = createHigherOrderComponent( ( BlockListBlock ) => {
+	return ( props ) => {
+		// Only modify navigation blocks
+		if ( props.name !== 'core/navigation' ) {
+			return <BlockListBlock { ...props } />;
+		}
+
+		const { mobileIconSize } = props.attributes;
+		
+		// Add the mobile icon size class if set
+		let className = props.className || '';
+		if ( mobileIconSize ) {
+			className = `${className} mobile-icon-${mobileIconSize}`.trim();
+		}
+
+		return <BlockListBlock { ...props } className={ className } />;
+	};
+}, 'withMobileIconSizeClass' );
 
 // Add filters
 addFilter(
@@ -237,4 +291,10 @@ addFilter(
 	'editor.BlockEdit',
 	'menu-designer/with-mobile-menu-controls',
 	withMobileMenuControls
+);
+
+addFilter(
+	'editor.BlockListBlock',
+	'menu-designer/with-mobile-icon-size-class',
+	withMobileIconSizeClass
 );

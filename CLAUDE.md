@@ -45,29 +45,25 @@ npm run plugin-zip
 src/
 ├── blocks/
 │   └── mega-menu/         # Mega menu block component
-├── scripts/
-│   └── mobile-menu/       # Mobile menu navigation extension
-├── shared/                # Shared components (TemplateSelector)
-├── block.json            # Block metadata
-├── index.js              # Main entry point
-├── render.php            # Server-side rendering
-├── view.js               # Frontend interactivity
-└── *.scss                # Styles
+├── components/            # Reusable React components
+├── hooks/                 # Custom React hooks
+├── mobile-menu/           # Mobile menu navigation extension
+└── utils/                 # Utility functions
 ```
 
 ### Block Registration Flow
-1. **PHP Entry** (`mega-menu-block.php`): Registers the block server-side and adds a custom "menu" template part area
-2. **JavaScript Entry** (`src/index.js`): Registers the block client-side and integrates it with navigation blocks
-3. **Block Definition** (`src/block.json`): Defines block metadata, attributes, and dependencies
+1. **PHP Entry** (`menu-designer.php`): Registers the block server-side and adds a custom "menu" template part area
+2. **JavaScript Entry** (`src/blocks/mega-menu/index.js`): Registers the block client-side and integrates it with navigation blocks
+3. **Block Definition** (`src/blocks/mega-menu/block.json`): Defines block metadata, attributes, and dependencies
 
 ### Frontend Rendering
-- **Server-side**: `src/render.php` handles PHP rendering using WordPress template parts
-- **Client-side**: `src/view.js` implements interactivity using WordPress Interactivity API for menu behaviors (open/close, keyboard navigation, focus management)
+- **Server-side**: `src/blocks/mega-menu/render.php` handles PHP rendering using WordPress template parts
+- **Client-side**: `src/blocks/mega-menu/view.js` implements interactivity using WordPress Interactivity API for menu behaviors (open/close, keyboard navigation, focus management)
 
 ### Editor Interface
 - **Mega Menu Block**: `src/blocks/mega-menu/edit.js` provides the block editor UI
-- **Mobile Menu**: `src/scripts/mobile-menu/navigation-edit.js` extends navigation block settings
-- **Shared Components**: `src/shared/TemplateSelector.js` used by both features
+- **Mobile Menu**: `src/mobile-menu/navigation-edit.js` extends navigation block settings
+- **Shared Components**: Components in `src/components/` directory including `TemplateSelector.js` used by both features
 
 ### Key Features Implementation
 - **Template Part Integration**: Both mega menu and mobile menu content use WordPress template parts, allowing flexible design through the Site Editor
@@ -90,6 +86,9 @@ src/
      - `topSpacing`: Space between toggle and menu
    - **Navigation Block Extension**:
      - `mobileMenuSlug`: Template part for mobile menu
+     - `mobileMenuBackgroundColor`: Background color for mobile menu
+     - `mobileIconBackgroundColor`: Background color for mobile icon
+     - `mobileIconColor`: Color for mobile icon
 
 3. **Navigation Block Integration**: The plugin extends WordPress navigation blocks by adding the mega menu as a navigation item variation
 
@@ -97,7 +96,13 @@ src/
 
 5. **Styling**: Uses SCSS with separate files for editor (`edit.scss`) and frontend (`style.scss`) styles
 
+6. **Plugin Update System**: Uses GitHub-based plugin update checker located in `includes/plugin-update-checker/` for automatic updates from releases
+
 ## Development Principles
 
 - Always use WordPress core components first when creating components, adding UI to the block editor, settings to blocks, etc. 
 - Always use WordPress core development standards and modern tooling
+- Maintain compatibility with WordPress 6.5+ and PHP 7.0+
+- Follow WordPress coding standards for PHP, JavaScript, and CSS
+- Use the WordPress Interactivity API for frontend JavaScript interactions
+- Ensure all user-facing strings use WordPress i18n functions for translation
